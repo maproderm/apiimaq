@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Proyecto desarrollado en Laravel API
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
@@ -56,6 +56,13 @@ Thank you for considering contributing to the Laravel framework! The contributio
 ## Code of Conduct
 
 In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+
+## Instalación
+### 1 Paso
+**1 forma**. Dar clic en Code y luego en Donwload Zip
+**2 forma.** Crear una carpeta, ingresar a git bash y ejecutar
+
+    git@github.com:maproderm/apiimaq.git
 
 ## Security Vulnerabilities
 
