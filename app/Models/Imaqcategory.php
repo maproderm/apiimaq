@@ -26,4 +26,8 @@ class Imaqcategory extends Model
     public function division() {
         return $this->belongsTo('App\Models\Imaqdivision', 'division_id', 'id');
     }
+
+    public function products() {
+        return $this->hasMany('App\Models\Inventory', 'category_id', 'id');
+    }
 }

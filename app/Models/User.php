@@ -58,4 +58,8 @@ class User extends Authenticatable
     public function provider() {
         return $this->belongsTo('App\Models\Imaqprovider', 'provider_id', 'id');
     }
+
+    public function devices() {
+        return $this->hasMany('App\Models\Device');
+    }
 }
