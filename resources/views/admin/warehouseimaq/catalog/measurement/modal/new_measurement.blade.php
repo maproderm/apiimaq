@@ -1,7 +1,7 @@
-<div class="modal fade" id="kt_modal_new_category_imaq" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="kt_modal_new_measurement_imaq" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <!--begin::Modal dialog-->
-    <div class="modal-dialog modal-dialog-centered mw-600px">
+    <div class="modal-dialog modal-dialog-centered mw-500px">
         <!--begin::Modal content-->
         <!--begin::Modal content-->
         <div class="modal-content rounded">
@@ -25,13 +25,13 @@
             <div class="modal-body pt-0 pb-15 px-5 px-xl-20">
                 <!--begin::Heading-->
                 <div class="mb-13 text-center">
-                    <h1 class="mb-3">Nueva Categoria</h1>
+                    <h1 class="mb-3">Nueva Unidad de Medida</h1>
                 </div>
                 <!--end::Heading-->
                 <div class="card-body pt-5">
                     <!--begin::Form-->
 
-                    <form id="kt_ecommerce_settings_general_form" class="form" action="{{  route('catalogimaq.storecategoryimaq')  }}" method="POST">
+                    <form id="kt_ecommerce_settings_general_form" class="form" action="{{  route('catalogimaq.medida.store')  }}" method="POST">
                         @csrf
                         <!--begin::Row-->
                         <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
@@ -41,12 +41,12 @@
                                 <div class="fv-row mb-5">
                                     <!--begin::Label-->
                                     <label class="fs-6 fw-semibold form-label mt-3">
-                                        <span class="required">Nombre de la categoría</span>
-                                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Ingresa el nombre de la nueva categoría"></i>
+                                        <span class="required">Nombre de unidad de medida</span>
+                                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Ingresa el nombre"></i>
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control" name="name_category_imaq" value="" required placeholder="Nombre de la categoría"/>
+                                    <input type="text" class="form-control" name="name_measurement_imaq" value="" required placeholder="Nombre de unidad de medida" autocomplete="off"/>
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
@@ -64,7 +64,7 @@
                             <!--end::Button-->
                             <!--begin::Button-->
                             <button type="submit" data-kt-contacts-type="submit" class="btn btn-primary">
-                                <span class="indicator-label">Guardar Categoría</span>
+                                <span class="indicator-label">Guardar</span>
                                 <span class="indicator-progress">Guardando...
                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                             </button>

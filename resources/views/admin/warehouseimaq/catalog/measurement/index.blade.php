@@ -37,7 +37,8 @@
         </div>
     </div>
 </div>
-@include('layouts.includes.admin.warehouseimaq.catalog.new_measurement')
+@include('admin.warehouseimaq.catalog.measurement.modal.new_measurement')
+<div id="edit_medida_imaq_modal"></div>
 @endsection
 @push('scripts')
     <script type="text/javascript" src="{{  URL::asset ('js/admin/warehouseimaq/catalog/measurement/measurement.js?v='.rand())  }}"></script>

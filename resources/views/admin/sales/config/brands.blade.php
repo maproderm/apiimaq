@@ -31,6 +31,7 @@
                         <th>N°</th>
                         <th class="min-w-100px">Nombre</th>
                         <th>Descripción</th>
+                        <th>Ultima modificación</th>
                         <th class="text-center min-w-100px">Acciones</th>
                     </tr>
                     </thead>
@@ -42,7 +43,8 @@
         </div>
     </div>
 </div>
-@include('layouts.includes.admin.sales.config.new_brand')
+@include('admin.sales.config.modal.new_brand')
+<div id="edit_brand_mpd_modal"></div>
 @endsection
 @push('scripts')
     <script type="text/javascript" src="{{  URL::asset ('js/admin/sales/config/brands.js?v='.rand())  }}"></script>

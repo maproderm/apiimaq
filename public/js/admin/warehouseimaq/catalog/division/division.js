@@ -29,6 +29,17 @@ var KTDatatablesButtons = function () {
                 }
             },
             {
+                //ABREVIATURA
+                targets   : 1,
+                render    : function (data, type, row) {
+                    if(row.abrv == null){
+                        return `<span class="badge badge-light-warning">Dato Faltante</span>`;
+                    }else {
+                        return `${row.abrv}`;
+                    }
+                }
+            },
+            {
                 //ACCIONES
                 targets: 2,
                 data: null,
@@ -36,8 +47,12 @@ var KTDatatablesButtons = function () {
                 className : 'dt-head-center dt-body-center',
                 render: function (data, type, row) {
                     return `
-                        <a href="#" class="btn btn-icon btn-light-warning"><i class="bi bi-pencil"></i></i></a>
-                        <a href="#" class="btn btn-icon btn-light-danger" data-kt-docs-table-filter="delete_row" data-category-id="${row.id}"><i class="bi bi-trash fs-2 me-2"></i></i></a>
+                        <button type="button" data-id="${row.id}" class="btn btn-icon btn-light-warning update_division">
+                        <i class="bi bi-pencil"></i>
+                        </button>
+                        <button type="button" data-id="${row.id}" data-name="${row.name}" class="btn btn-icon btn-light-danger delete_division">
+                            <i class="bi bi-trash fs-2"></i>
+                        </button>
                     `;
                 }
             },
@@ -53,54 +68,60 @@ var KTDatatablesButtons = function () {
         });
     }
 
-    // Delete customer
-    var handleDeleteRows = () => {
-        // Select all delete buttons
+    let deleteDivision = function () {
+        $(document).on('click','.delete_division',function(){
+            let id   = $(this).data('id');
+            let name = $(this).data('name');
+            Swal.fire({
+                text: `¿Estas seguro de querer eliminar la division ${name}?`,
+                icon: "warning",
+                showCancelButton: true,
+                buttonsStyling: false,
+                confirmButtonText: "Si, eliminar",
+                cancelButtonText: "No, cancelar",
+                customClass: {
+                    confirmButton: "btn fw-bold btn-danger",
+                    cancelButton: "btn fw-bold btn-active-primary"
+                }
+            }).then(function (result) {
+                if (result.value) {
+                    $.ajax({
+                        url         : '/division-imaq/delete/'+ id,
+                        dataType    : 'json',
+                        contentType : false,
+                        processData : false,
+                        type        : 'GET',
+                    }).done(function(response){
+                        Swal.fire({
+                            title : response.title,
+                            text  : response.message,
+                            icon  : response.icon
+                        }).then( () => datatable.ajax.reload() );
+                    });
+                }
+            });
+        });
+    }
 
-        const deleteButtons = document.querySelectorAll('[data-kt-docs-table-filter="delete_row"]');
-
-        deleteButtons.forEach(d => {
-            // Delete button on click
-            d.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                // Select parent row
-                const parent = e.target.closest('tr');
-                const id = e.target.getAttribute('data-category-id');
-                // Get customer name
-                const productName = parent.querySelectorAll('td')[1].innerText;
-
-                // SweetAlert2 pop up --- official docs reference: https://sweetalert2.github.io/
-                Swal.fire({
-                    text: "Estas seguro de querer eliminar la categoría " + productName + "?",
-                    icon: "warning",
-                    showCancelButton: true,
-                    buttonsStyling: false,
-                    confirmButtonText: "Si, eliminar!",
-                    cancelButtonText: "No, cancelar",
-                    customClass: {
-                        confirmButton: "btn fw-bold btn-danger",
-                        cancelButton: "btn fw-bold btn-active-primary"
-                    }
-                }).then(function (result) {
-                    if (result.value) {
-                        $.ajax({
-                            url: '/categories/delete/'+ id,
-                            dataType: 'json',
-                            contentType: false,
-                            processData: false,
-                            type: 'GET',
-                        }).done(function(response){
-                            Swal.fire({
-                                title: response.title,
-                                text: response.message,
-                                icon: response.icon,
-                                timer: 2000
-                            }).then( () => location.reload() );
-                        });
-                    }
-                });
-            })
+    // UPDATE DIVISION
+    let updateDivsion = function () {
+        $(document).on('click','.update_division',function(){
+            let id = $(this).data('id');
+            $.ajax({
+                url         : `/division-imaq/${id}/edit`,
+                dataType    : 'json',
+                contentType : false,
+                processData : false,
+                type        : 'GET',
+            }).done(function(response){
+                if(!response.error){
+                    $('#edit_division_imaq_modal').empty();
+                    $('#edit_division_imaq_modal').append(response.render);
+                    $('#kt_modal_update_division_imaq').modal('show');
+                } else {
+                    // Colocar mensaje en caso de error
+                }
+            });
         });
     }
 
@@ -109,7 +130,8 @@ var KTDatatablesButtons = function () {
         init: function () {
             initDatatable();
             handleSearchDatatable();
-            handleDeleteRows();
+            deleteDivision();
+            updateDivsion();
         }
     }
 }();

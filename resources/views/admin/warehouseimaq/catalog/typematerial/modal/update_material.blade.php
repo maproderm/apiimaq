@@ -1,7 +1,7 @@
-<div class="modal fade" id="kt_modal_new_division_imaq" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="kt_modal_update_material_imaq" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <!--begin::Modal dialog-->
-    <div class="modal-dialog modal-dialog-centered mw-600px">
+    <div class="modal-dialog modal-dialog-centered mw-500px">
         <!--begin::Modal content-->
         <!--begin::Modal content-->
         <div class="modal-content rounded">
@@ -25,14 +25,15 @@
             <div class="modal-body pt-0 pb-15 px-5 px-xl-20">
                 <!--begin::Heading-->
                 <div class="mb-13 text-center">
-                    <h1 class="mb-3">Nueva Division</h1>
+                    <h1 class="mb-3">Editar Tipo de Material</h1>
                 </div>
                 <!--end::Heading-->
                 <div class="card-body pt-5">
                     <!--begin::Form-->
 
-                    <form id="kt_ecommerce_settings_general_form" class="form" action="{{  route('catalogimaq.storedivisionimaq')  }}" method="POST">
+                    <form id="kt_ecommerce_settings_general_form" class="form" action="{{  route('catalogimaq.material.update',[$data->material->id])  }}" method="POST">
                         @csrf
+                        @method('PATCH')
                         <!--begin::Row-->
                         <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
                             <!--begin::Col-->
@@ -41,28 +42,12 @@
                                 <div class="fv-row mb-5">
                                     <!--begin::Label-->
                                     <label class="fs-6 fw-semibold form-label mt-3">
-                                        <span class="required">Nombre de división</span>
-                                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Ingresa el nombre de la nueva marca"></i>
+                                        <span class="required">Nombre del tipo de material</span>
+                                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Ingresa el nombre"></i>
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control" name="name_division_imaq" value="" required placeholder="Nombre de división" autocomplete="off"/>
-                                    <!--end::Input-->
-                                </div>
-                                <!--end::Input group-->
-                            </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
-                            <div class="col">
-                                <!--begin::Input group-->
-                                <div class="fv-row mb-5">
-                                    <!--begin::Label-->
-                                    <label class="fs-6 fw-semibold form-label mt-3">
-                                        <span class="required">Abreviación</span>
-                                    </label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <input type="text" class="form-control" name="abrv_division_imaq" value="" required placeholder="Abreviación de división" autocomplete="off"/>
+                                    <input type="text" class="form-control" name="name" value="{{ $data->material->name ?? '' }}" required placeholder="Nombre del tipo de material" autocomplete="off"/>
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
@@ -77,10 +62,11 @@
                         <div class="d-flex flex-center flex-row-fluid pt-12">
                             <!--begin::Button-->
                             <button type="reset" data-kt-contacts-type="cancel" class="btn btn-light me-3">Borrar todo</button>
+                            <input type="hidden" name="id" value="{{ $data->material->id}}">
                             <!--end::Button-->
                             <!--begin::Button-->
                             <button type="submit" data-kt-contacts-type="submit" class="btn btn-primary">
-                                <span class="indicator-label">Guardar División</span>
+                                <span class="indicator-label">Guardar</span>
                                 <span class="indicator-progress">Guardando...
                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                             </button>

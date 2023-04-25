@@ -1,4 +1,4 @@
-<div class="modal fade" id="kt_modal_new_brand" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="kt_modal_update_brand_mpd" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-600px">
         <!--begin::Modal content-->
@@ -24,14 +24,15 @@
             <div class="modal-body pt-0 pb-15 px-5 px-xl-20">
                 <!--begin::Heading-->
                 <div class="mb-13 text-center">
-                    <h1 class="mb-3">Nueva Marca</h1>
+                    <h1 class="mb-3">Editar Marca</h1>
                 </div>
                 <!--end::Heading-->
                 <div class="card-body pt-5">
                     <!--begin::Form-->
 
-                    <form id="kt_ecommerce_settings_general_form" class="form" action="{{  route('configmapro.storebrand')  }}" method="POST">
+                    <form id="kt_ecommerce_settings_general_form" class="form" action="{{  route('catalogmpd.brands.update',[$data->brand->id])  }}" method="POST">
                         @csrf
+                        @method('PATCH')
                         <!--begin::Row-->
                         <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
                             <!--begin::Col-->
@@ -45,7 +46,7 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control" name="name_brand" value="" required placeholder="Nombre de la marca"/>
+                                    <input type="text" class="form-control" name="name" value="{{ $data->brand->name ?? '' }}" required placeholder="Nombre de la marca" autocomplete="off" />
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
@@ -62,13 +63,13 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control" name="description_brand" value="" required placeholder="Nombre de la marca"/>
+                                    <input type="text" class="form-control" name="description" value="{{ $data->brand->description ?? '' }}" required placeholder="Nombre de la marca" autocomplete="off" />
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
                             </div>
                             <!--end::Col-->
-                            <div class="col">
+                            {{-- <div class="col">
                                 <!--begin::Input group-->
                                 <div class="fv-row mb-7">
                                     <!--begin::Label-->
@@ -84,14 +85,13 @@
                                                 <option></option>
                                                 <option name="type_brand" value="2">Maquila</option>
                                                 <option name="type_brand" value="3">Proveedor</option>
-                                                {{-- @endforeach --}}
                                             </select>
                                         </div>
                                     </div>
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
-                            </div>
+                            </div> --}}
                         </div>
                         <!--end::Row-->
                         <!--begin::Separator-->
@@ -101,10 +101,11 @@
                         <div class="d-flex flex-center flex-row-fluid pt-12">
                             <!--begin::Button-->
                             <button type="reset" data-kt-contacts-type="cancel" class="btn btn-light me-3">Borrar todo</button>
+                            <input type="hidden" name="id" value="{{ $data->brand->id}}">
                             <!--end::Button-->
                             <!--begin::Button-->
                             <button type="submit" data-kt-contacts-type="submit" class="btn btn-primary">
-                                <span class="indicator-label">Guardar Marca</span>
+                                <span class="indicator-label">Guardar Cambios</span>
                                 <span class="indicator-progress">Guardando...
                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                             </button>

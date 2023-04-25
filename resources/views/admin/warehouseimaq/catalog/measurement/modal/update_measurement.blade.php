@@ -1,15 +1,14 @@
-<!--begin::Modal - New Target-->
-<!--begin::Modal-->
-<!--end::Modal-->
-<div class="modal fade" id="kt_modal_edit_status" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="kt_modal_update_medida_imaq" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
-    <div class="modal-dialog modal-dialog-centered mw-600px">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-500px">
+        <!--begin::Modal content-->
         <!--begin::Modal content-->
         <div class="modal-content rounded">
             <!--begin::Modal header-->
             <div class="modal-header justify-content-end border-0 pb-0">
                 <!--begin::Close-->
-                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                <div class="btn btn-sm btn-icon btn-active-color-danger" data-bs-dismiss="modal">
                     <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
                     <span class="svg-icon svg-icon-1">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,39 +20,39 @@
                 </div>
                 <!--end::Close-->
             </div>
-            <!--begin::Modal header-->
+            <!--end::Modal header-->
             <!--begin::Modal body-->
             <div class="modal-body pt-0 pb-15 px-5 px-xl-20">
+                <!--begin::Heading-->
+                <div class="mb-13 text-center">
+                    <h1 class="mb-3">Editar Unidad de Medida</h1>
+                </div>
+                <!--end::Heading-->
                 <div class="card-body pt-5">
+                    <!--begin::Form-->
 
-                    <form id="kt_modal_new_target_form" class="form" action="{{  route('formimaq.update',[$data->imaqform->id])  }}" method="POST">
+                    <form id="kt_ecommerce_settings_general_form" class="form" action="{{  route('catalogimaq.medida.update',[$data->medida->id])  }}" method="POST">
                         @csrf
                         @method('PATCH')
                         <!--begin::Row-->
                         <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
+                            <!--begin::Col-->
                             <div class="col">
                                 <!--begin::Input group-->
-                                <div class="fv-row mb-7">
+                                <div class="fv-row mb-5">
                                     <!--begin::Label-->
                                     <label class="fs-6 fw-semibold form-label mt-3">
-                                        <span class="required">Actualización de Estatus</span>
+                                        <span class="required">Nombre de unidad de medida</span>
+                                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Ingresa el nombre"></i>
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <div class="input-group flex-nowrap">
-                                        <span class="input-group-text"><i class="bi bi-bezier text-primary"></i></i></span>
-                                        <div class="overflow-hidden flex-grow-1">
-                                            <select name="status" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción" required>
-                                                <option></option>
-                                                <option name="status" value="0">Pendiente</option>
-                                                <option name="status" value="1">Atendido</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                    <input type="text" class="form-control" name="name" value="{{ $data->medida->name ?? '' }}" required placeholder="Nombre de unidad de medida" autocomplete="off"/>
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
                             </div>
+                            <!--end::Col-->
                         </div>
                         <!--end::Row-->
                         <!--begin::Separator-->
@@ -61,10 +60,13 @@
                         <!--end::Separator-->
                         <!--begin::Action buttons-->
                         <div class="d-flex flex-center flex-row-fluid pt-12">
-                            <input type="hidden" name="id" value="{{ $data->imaqform->id}}">
+                            <!--begin::Button-->
+                            <button type="reset" data-kt-contacts-type="cancel" class="btn btn-light me-3">Borrar todo</button>
+                            <input type="hidden" name="id" value="{{ $data->medida->id}}">
+                            <!--end::Button-->
                             <!--begin::Button-->
                             <button type="submit" data-kt-contacts-type="submit" class="btn btn-primary">
-                                <span class="indicator-label">Actualizar</span>
+                                <span class="indicator-label">Guardar</span>
                                 <span class="indicator-progress">Guardando...
                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                             </button>
@@ -75,11 +77,11 @@
                     <!--end::Form-->
                 </div>
             </div>
-
             <!--end::Modal body-->
         </div>
         <!--end::Modal content-->
+        <!--end::Modal content-->
     </div>
     <!--end::Modal dialog-->
+    <!--end::Modal dialog-->
 </div>
-<!--end::Modal - New Target-->

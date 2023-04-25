@@ -39,7 +39,8 @@
         </div>
     </div>
 </div>
-@include('layouts.includes.admin.sales.config.new_category')
+@include('admin.sales.config.modal.new_category')
+<div id="edit_category_mpd_modal"></div>
 @endsection
 @push('scripts')
     <script type="text/javascript" src="{{  URL::asset ('js/admin/sales/config/category.js?v='.rand())  }}"></script>

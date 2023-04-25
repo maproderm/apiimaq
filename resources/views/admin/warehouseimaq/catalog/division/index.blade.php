@@ -26,6 +26,7 @@
                     <tr class="text-start text-dark fw-bolder fs-7 text-uppercase gs-0">
                         <th>N°</th>
                         <th class="min-w-100px">Nombre</th>
+                        <th class="min-w-100px">Abreviatura</th>
                         <th class="text-center min-w-100px">Acciones</th>
                     </tr>
                     </thead>
@@ -37,7 +38,8 @@
         </div>
     </div>
 </div>
-@include('layouts.includes.admin.warehouseimaq.catalog.new_division')
+@include('admin.warehouseimaq.catalog.division.modal.new_division')
+<div id="edit_division_imaq_modal"></div>
 @endsection
 @push('scripts')
     <script type="text/javascript" src="{{  URL::asset ('js/admin/warehouseimaq/catalog/division/division.js?v='.rand())  }}"></script>

@@ -37,7 +37,8 @@
         </div>
     </div>
 </div>
-@include('layouts.includes.admin.warehouseimaq.catalog.new_material')
+@include('admin.warehouseimaq.catalog.typematerial.modal.new_material')
+<div id="edit_material_imaq_modal"></div>
 @endsection
 @push('scripts')
     <script type="text/javascript" src="{{  URL::asset ('js/admin/warehouseimaq/catalog/material/material.js?v='.rand())  }}"></script>

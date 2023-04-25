@@ -23,14 +23,6 @@
                     <tr class="text-start text-dark fw-bolder fs-7 text-uppercase gs-0">
                         <th>N°</th>
                         <th class="min-w-100px">Nombre</th>
-                        <th>Apellido</th>
-                        <th>Correo</th>
-                        <th class="min-w-100px">Teléfono</th>
-                        <th>Servicio</th>
-                        <th>Linea de producto</th>
-                        <th>Cantidad</th>
-                        <th>Contactar al horario</th>
-                        <th>Mensaje</th>
                         <th>Status</th>
                         {{-- <th class="text-center min-w-100px">Acciones</th> --}}
                     </tr>
@@ -44,7 +36,7 @@
     </div>
 </div>
 @endsection
-{{-- @push('scripts')
-    <script type="text/javascript" src="{{  URL::asset ('js/admin/warehouseimaq/formimaq/formimaq.js?v='.rand())  }}"></script>
-@endpush --}}
+@push('scripts')
+    <script type="text/javascript" src="{{  URL::asset ('js/admin/warehouseimaq/formimaq/line_form_imaq.js?v='.rand())  }}"></script>
+@endpush
 

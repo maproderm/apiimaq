@@ -1,7 +1,7 @@
 <!--begin::Modal - New Target-->
 <!--begin::Modal-->
 <!--end::Modal-->
-<div class="modal fade" id="kt_modal_edit_status" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="kt_modal_edit_status_service" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-600px">
         <!--begin::Modal content-->
@@ -31,6 +31,23 @@
                         @method('PATCH')
                         <!--begin::Row-->
                         <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
+                            <!--begin::Col-->
+                            <div class="col">
+                                <!--begin::Input group-->
+                                <div class="fv-row mb-5">
+                                    <!--begin::Label-->
+                                    <label class="fs-6 fw-semibold form-label mt-3">
+                                        <span class="required">Nombre del servicio</span>
+                                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Ingresa el nombre de la nueva marca"></i>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <input type="text" class="form-control" name="name" value="{{ $data->imaqform->name ?? '' }}" required placeholder="Nombre del servicio" autocomplete="off" />
+                                    <!--end::Input-->
+                                </div>
+                                <!--end::Input group-->
+                            </div>
+                            <!--end::Col-->
                             <div class="col">
                                 <!--begin::Input group-->
                                 <div class="fv-row mb-7">
@@ -44,7 +61,7 @@
                                         <span class="input-group-text"><i class="bi bi-bezier text-primary"></i></i></span>
                                         <div class="overflow-hidden flex-grow-1">
                                             <select name="status" class="form-select rounded-start-0" data-control="select2" data-placeholder="Selecciona una opción" required>
-                                                <option></option>
+                                                <option>Seleciona un Estatus</option>
                                                 <option name="status" value="0">Pendiente</option>
                                                 <option name="status" value="1">Atendido</option>
                                             </select>

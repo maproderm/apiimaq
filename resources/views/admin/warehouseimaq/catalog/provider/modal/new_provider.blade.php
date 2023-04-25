@@ -32,7 +32,7 @@
                 <div class="card-body pt-5">
                     <!--begin::Form-->
 
-                    <form id="kt_ecommerce_settings_general_form" class="form" action="{{  route('catalogimaq.storeproviderimaq')  }}" method="POST">
+                    <form id="kt_ecommerce_settings_general_form" class="form" action="{{  route('catalogimaq.proveedor.store')  }}" method="POST">
                         @csrf
                         <!--begin::Row-->
                         <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">

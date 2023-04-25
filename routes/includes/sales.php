@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Sales\Sale\SaleController;
 use App\Http\Controllers\Sales\Client\ClientController;
+use App\Http\Controllers\Sales\Config\BrandsController;
 use App\Http\Controllers\Sales\Dealer\DealerController;
 use App\Http\Controllers\Sales\Pedido\PedidoController;
+use App\Http\Controllers\Sales\Config\CategoriesController;
 use App\Http\Controllers\Sales\Inventory\ProductController;
 use App\Http\Controllers\Sales\Config\ConfigmaproController;
 
@@ -43,12 +45,19 @@ Route::group(['middleware' => ['role:developer|superadmin|sales']], function () 
     Route::resource('pedidos', PedidoController::class)->middleware(['auth'])->names('pedidos')->except(['destroy']);
 
     //Config
-    Route::get('/categorias-maproderm',[ConfigmaproController::class,'categories'])->middleware(['auth'])->name('configmapro.categories');
-    Route::get('/categorias/get-maproderm-all',[ConfigmaproController::class,'getCategories'])->middleware(['auth'])->name('configmapro.categoriesall');
-    Route::post('/storecategory',[ConfigmaproController::class,'storeCategory'])->middleware(['auth'])->name('configmapro.storecategory');
-    Route::get('/marcas-maproderm',[ConfigmaproController::class,'brands'])->middleware(['auth'])->name('configmapro.brands');
+    //Categories
+    Route::get('/categorias-maproderm',[CategoriesController::class,'index'])->middleware(['auth'])->name('catalogmpd.categories.index');
+    Route::get('/categorias/get-maproderm-all',[CategoriesController::class,'get'])->middleware(['auth'])->name('catalogmpd.categories.get');
+    Route::get('/categories-mpd/{id}/edit',[CategoriesController::class,'edit'])->middleware(['auth'])->name('catalogimaq.medida.edit');
+    Route::get('/categories-mpd/delete/{id}',[CategoriesController::class,'delete'])->middleware(['auth'])->name('catalogimaq.medida.destroy');
+    Route::resource('maproderm-categorias', CategoriesController::class)->middleware(['auth'])->names('catalogmpd.categories')->except(['destroy']);
 
-    Route::get('/marcas/get-maproderm-all',[ConfigmaproController::class,'getBrands'])->middleware(['auth'])->name('configmapro.brandsall');
-    Route::post('/storebrand',[ConfigmaproController::class,'storeBrand'])->middleware(['auth'])->name('configmapro.storebrand');
-    Route::resource('configuracionesmapro', ConfigmaproController::class)->middleware(['auth'])->names('configmapro')->except(['destroy']);
+    //Brand
+    Route::get('/marcas-maproderm',[BrandsController::class,'index'])->middleware(['auth'])->name('catalogmpd.brands.index');
+    Route::get('/marcas/get-maproderm-all',[BrandsController::class,'get'])->middleware(['auth'])->name('catalogmpd.brands.get');
+    Route::get('/brands-mpd/{id}/edit',[BrandsController::class,'edit'])->middleware(['auth'])->name('catalogmpd.brands.edit');
+    Route::get('/brands-mpd/delete/{id}',[BrandsController::class,'delete'])->middleware(['auth'])->name('catalogmpd.brands.destroy');
+    Route::resource('maproderm-marcas', BrandsController::class)->middleware(['auth'])->names('catalogmpd.brands')->except(['destroy']);
+
+    Route::resource('configuracionesmapro', ConfigmaproController::class)->middleware(['auth'])->names('catalogmpd')->except(['destroy']);
 });

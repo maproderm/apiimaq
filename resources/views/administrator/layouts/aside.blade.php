@@ -420,7 +420,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{ setActive('catalogimaq.indexbrand') }}" href="{{ route('catalogimaq.indexbrand') }}">
+                            <a class="menu-link {{ setActive('catalogimaq.brand.index') }}" href="{{ route('catalogimaq.brand.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -436,7 +436,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{ setActive('catalogimaq.indexcategory') }}" href="{{ route('catalogimaq.indexcategory') }}">
+                            <a class="menu-link {{ setActive('catalogimaq.category.index') }}" href="{{ route('catalogimaq.category.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -453,7 +453,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{ setActive('catalogimaq.indexdivision') }}" href="{{ route('catalogimaq.indexdivision') }}">
+                            <a class="menu-link {{ setActive('catalogimaq.division.index') }}" href="{{ route('catalogimaq.division.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -469,7 +469,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{ setActive('catalogimaq.indexprovider') }}" href="{{ route('catalogimaq.indexprovider') }}">
+                            <a class="menu-link {{ setActive('catalogimaq.proveedor.index') }}" href="{{ route('catalogimaq.proveedor.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -485,7 +485,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{ setActive('catalogimaq.indexmeasurement') }}" href="{{ route('catalogimaq.indexmeasurement') }}">
+                            <a class="menu-link {{ setActive('catalogimaq.medida.index') }}" href="{{ route('catalogimaq.medida.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -501,7 +501,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{ setActive('catalogimaq.indexmaterial') }}" href="{{ route('catalogimaq.indexmaterial') }}">
+                            <a class="menu-link {{ setActive('catalogimaq.material.index') }}" href="{{ route('catalogimaq.material.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -1021,7 +1021,7 @@
                 </div>
                 <!--end:Menu item-->
                 <!--begin:Menu item-->
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ setOpen('configmapro') }}">
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ setOpen('catalogmpd') }}">
                     <!--begin:Menu link-->
                     <span class="menu-link">
                         <span class="menu-icon">
@@ -1036,7 +1036,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{ setActive('configmapro.categories') }}" href="{{ route('configmapro.categories') }}">
+                            <a class="menu-link {{ setActive('catalogmpd.categories.index') }}" href="{{ route('catalogmpd.categories.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -1048,7 +1048,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link {{ setActive('configmapro.brands') }}" href="{{ route('configmapro.brands') }}">
+                            <a class="menu-link {{ setActive('catalogmpd.brands.index') }}" href="{{ route('catalogmpd.brands.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>

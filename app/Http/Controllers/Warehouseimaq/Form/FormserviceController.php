@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Warehouseimaq\Form;
 
 use App\Models\Imaqform;
 use Illuminate\Http\Request;
+use App\Models\Imaqformservices;
 use App\Http\Controllers\Controller;
 
 class FormserviceController extends Controller
@@ -58,7 +59,29 @@ class FormserviceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $error   = false;
+        $message = null;
+        $render  = null;
+        try {
+            $imaqform = Imaqformservices::find($id);
+            if($imaqform){
+                $data               = (object)[];
+                $data->imaqform     = $imaqform;
+                $render = view('admin.warehouseimaq.form.modal.edit_status_service',compact('data'))->render();
+            } else {
+                $error   = false;
+                $message = 'Producto no encontrado';
+            }
+        } catch (\Throwable $th) {
+            $error   = false;
+            $message = "Ocurrió un error durante el proceso: {$th->getMessage()}";
+        }
+
+        return response()->json([
+            'error'   => $error,
+            'message' => $message,
+            'render'  => $render
+        ]);
     }
 
     /**
@@ -85,6 +108,6 @@ class FormserviceController extends Controller
     }
 
     public function get() {
-        return Imaqform::get();
+        return Imaqformservices::get();
     }
 }

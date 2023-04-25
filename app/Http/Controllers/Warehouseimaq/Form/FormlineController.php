@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Warehouseimaq\Form;
 
 use App\Models\Imaqform;
 use Illuminate\Http\Request;
+use App\Models\Imaqformlines;
 use App\Http\Controllers\Controller;
 
 class FormlineController extends Controller
@@ -85,6 +86,6 @@ class FormlineController extends Controller
     }
 
     public function get() {
-        return Imaqform::get();
+        return Imaqformlines::get();
     }
 }

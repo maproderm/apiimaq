@@ -39,7 +39,8 @@
         </div>
     </div>
 </div>
-@include('layouts.includes.admin.warehouseimaq.catalog.new_category')
+@include('admin.warehouseimaq.catalog.category.modal.new_category')
+<div id="edit_category_imaq_modal"></div>
 @endsection
 @push('scripts')
     <script type="text/javascript" src="{{  URL::asset ('js/admin/warehouseimaq/catalog/category/category.js?v='.rand())  }}"></script>
