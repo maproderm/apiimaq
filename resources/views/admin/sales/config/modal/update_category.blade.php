@@ -46,7 +46,7 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control" name="name_category" value="{{ $data->category->name ?? '' }}" required placeholder="Nombre de la categoría" autocomplete="off" />
+                                    <input type="text" class="form-control" name="name" value="{{ $data->category->name ?? '' }}" required placeholder="Nombre de la categoría" autocomplete="off" />
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->

@@ -20,14 +20,15 @@ class Mpdorder extends Model
      */
     protected $fillable = [
         'id',
-        'client_id',
         'user_id',
+        'employee_id',
         'num_order',
         'items',
         'subtotal',
         'discount',
         'shipping',
         'total',
+        'delivery_date',
         'status',
     ];
 

@@ -45,7 +45,7 @@
         </div>
     </div>
 </div>
-@include('layouts.includes.admin.sales.clients.new_client')
+@include('admin.sales.clients.modals.new_client')
 @endsection
 @push('scripts')
     <script type="text/javascript" src="{{  URL::asset ('js/admin/sales/client/clients.js?v='.rand())  }}"></script>

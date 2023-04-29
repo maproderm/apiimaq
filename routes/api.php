@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\Auth\AuthController;
 use App\Http\Controllers\Api\V1\User\UserController;
+use App\Http\Controllers\Api\V1\Warehousemapro\Order\OrdersController;
 use App\Http\Controllers\Api\V1\Warehousemapro\Inventory\ProductsController;
 
 /*
@@ -42,6 +43,8 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
 
     // Route::apiResource('products', ProductsController::class);
     Route::get('/get-products', [ProductsController::class, 'getProducts'])->name('api.products.get');
+
+    Route::apiResource('orders', OrdersController::class);
 
 });
 

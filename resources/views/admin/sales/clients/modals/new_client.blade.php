@@ -47,7 +47,7 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control" name="name_client" value="" required placeholder="Nombre del cliente"/>
+                                    <input type="text" class="form-control" name="name_client" value="" required placeholder="Nombre del cliente" autocomplete="off"/>
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
@@ -63,7 +63,7 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control" name="last_name_client" value="" required/>
+                                    <input type="text" class="form-control" name="last_name_client" value="" autocomplete="off" required/>
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
@@ -83,7 +83,7 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="email" class="form-control" name="email_client" value="" required/>
+                                    <input type="email" class="form-control" name="email_client" value="" autocomplete="off" required/>
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
@@ -98,7 +98,7 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control" name="membership_client" value="" />
+                                    <input type="text" class="form-control" name="membership_client" autocomplete="off" value="" />
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
@@ -117,7 +117,7 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control" name="address_client" value="" required/>
+                                    <input type="text" class="form-control" name="address_client" value="" autocomplete="off" required/>
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
@@ -133,7 +133,7 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control" name="city_client" value="" required/>
+                                    <input type="text" class="form-control" name="city_client" value="" autocomplete="off" required/>
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
@@ -153,7 +153,7 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control" name="postal_code_client" value="" required/>
+                                    <input type="text" class="form-control" name="postal_code_client" value="" autocomplete="off" required/>
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
@@ -169,7 +169,7 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control" name="phone_client" value="" required/>
+                                    <input type="text" class="form-control" name="phone_client" value="" autocomplete="off" required/>
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Input group-->
