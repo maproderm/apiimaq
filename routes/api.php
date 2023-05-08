@@ -50,4 +50,5 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
 
 Route::apiResource('orders', OrdersController::class);
 
+Route::get('/get-orders-complete', [OrdersController::class, 'getOrdersComplete'])->name('api.orderscomplete.get');
 

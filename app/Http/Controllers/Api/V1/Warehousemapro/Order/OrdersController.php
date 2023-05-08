@@ -24,7 +24,11 @@ class OrdersController extends Controller
 
         try {
 
-            $orders     = Mpdorder::with('user')->get();
+            // $orders     = Mpdorder::with('user')->get();
+
+            // $orders     = Mpdorder::where('status',['2','3'])->orderBy('created_at', 'DESC')->with('user')->get();
+            // $orders     = Mpdorder::wherein('status',[2,3])->orderBy('created_at', 'DESC')->with('user')->get();
+            $orders     = Mpdorder::where('status',2)->orderBy('created_at', 'DESC')->with('user')->get();
             $data       = OrderResource::collection( $orders );
             return response()->json([
                 'ok' => true,
@@ -35,6 +39,30 @@ class OrdersController extends Controller
             return response()->json([
                 'ok'        => false,
                 'orders' => [],
+            ], 400);
+        }
+
+    }
+
+    public function getOrdersComplete()
+    {
+
+        try {
+
+            // $orders     = Mpdorder::with('user')->get();
+
+            // $orders     = Mpdorder::where('status',['2','3'])->orderBy('created_at', 'DESC')->with('user')->get();
+            $orders     = Mpdorder::where('status',3)->orderBy('created_at', 'DESC')->with('user')->get();
+            $data       = OrderResource::collection( $orders );
+            return response()->json([
+                'ok' => true,
+                'orderscomplete' => $data
+            ]);
+
+        } catch (Throwable $th) {
+            return response()->json([
+                'ok'        => false,
+                'orderscomplete' => [],
             ], 400);
         }
 

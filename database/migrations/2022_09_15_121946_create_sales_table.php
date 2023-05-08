@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('employee_id')->index();
             $table->foreign('employee_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('num_order')->nullable();
+            $table->tinyInteger('sale_in')->default(1)->comment('1:WhatsApp 2:Tienda en línea 3:Mercado Libre 4:Amazón');
             $table->integer('items')->default(0);
             $table->float('subtotal')->nullable();
             $table->float('discount')->nullable();
