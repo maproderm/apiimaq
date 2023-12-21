@@ -44,11 +44,13 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     // Route::apiResource('products', ProductsController::class);
     Route::get('/get-products', [ProductsController::class, 'getProducts'])->name('api.products.get');
 
-
+    Route::apiResource('orders', OrdersController::class);
 
 });
 
-Route::apiResource('orders', OrdersController::class);
+
 
 Route::get('/get-orders-complete', [OrdersController::class, 'getOrdersComplete'])->name('api.orderscomplete.get');
+
+Route::get('/get-orders-pending', [OrdersController::class, 'getOrdersPending'])->name('api.orderspending.get');
 

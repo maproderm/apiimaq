@@ -1057,6 +1057,18 @@
                             <!--end:Menu link-->
                         </div>
                         <!--end:Menu item-->
+                        <!--begin:Menu item-->
+                        <div class="menu-item">
+                            <!--begin:Menu link-->
+                            <a class="menu-link {{ setActive('catalogmpd.events.index') }}" href="{{ route('catalogmpd.events.index') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Eventos</span>
+                            </a>
+                            <!--end:Menu link-->
+                        </div>
+                        <!--end:Menu item-->
                     </div>
                     <!--end:Menu sub-->
                 </div>
@@ -1263,7 +1275,7 @@
                 <!--begin:Menu item-->
                 <div class="menu-item">
                     <!--begin:Menu link-->
-                    <a class="menu-link {{ setActive('view-user') }}" href="{{ route('view-user') }}">
+                    <a class="menu-link {{ setActive('all.users.index') }}" href="{{ route('all.users.index') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
                             {{-- <i class="bi bi-fingerprint fs-3"></i> --}}

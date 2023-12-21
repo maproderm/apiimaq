@@ -6,7 +6,7 @@ var KTDatatablesButtons = function () {
     var datatable;
     // Private functions
     var initDatatable = function () {
-        let url     = `${HOST_URL}/users/get-general-all`;
+        let url     = `${HOST_URL}/events/get-maproderm-all`;
         let columns = [
             {   //ID
                 targets   : 0,
@@ -28,54 +28,57 @@ var KTDatatablesButtons = function () {
                 //LINE_ID
                 targets: 2,
                 render: function (data, type, row) {
-                    return `${row.last_name}`;
+                    return `${row.productor}`;
+                }
+            },
+            {
+                //LINE_ID
+                targets: 2,
+                render: function (data, type, row) {
+                    return `${row.artista}`;
+                }
+            },
+            {
+                //LINE_ID
+                targets: 2,
+                render: function (data, type, row) {
+                    return `${row.ciudad}`;
                 }
             },
             {
                 //LINE_ID
                 targets: 3,
                 render: function (data, type, row) {
-                    return `${row.email}`;
+                    if (row.fecha_inicio == null) {
+                        return `<span class="badge badge-secondary">--</span>`;
+                    }else {
+                        let date       = new Date(row.fecha_inicio),
+                        dateFormat = new Intl.DateTimeFormat('es', { year: 'numeric',month: 'long',day: '2-digit'}).format(date);
+                        // dateFormat = new Intl.DateTimeFormat('es').format(date);
+                        return `${dateFormat}`;
+                    }
+                    //return `${row.updated_at}`;
                 }
             },
-            {
-                //LINE_ID
-                targets: 4,
-                render: function (data, type, row) {
-                    if (row.status == 1) {
-                        return `<span class="badge badge-light-success">Activo</span>`;
-                    }if (row.status == 0){
-                        return `<span class="badge badge-light-danger">Inactivo</span>`;
-                    } else {
-                        return `<span class="badge badge-light-secondary">--</span>`;
-                    }
-                }
-            },
-            {
-                //LINE_ID
-                targets: 5,
-                className : 'dt-head-center dt-body-center',
-                render: function (data, type, row) {
-                    if (row.last_login == null) {
-                        return `<span class="badge badge-light-secondary">--</span>`;
-                    } else {
-                        return `${row.last_login}`;
-                    }
 
-                }
-            },
             {
                 //ACCIONES
-                targets: 6,
+                targets: 4,
                 data: null,
                 orderable: false,
                 className : 'dt-head-center dt-body-center',
                 render: function (data, type, row) {
                     return `
-                        <button type="button" data-id="${row.id}" class="btn btn-icon btn-light-warning update_user">
-                            <i class="bi bi-pencil "></i>
+                        <button type="button" data-id="${row.id}" class="btn btn-icon btn-light-warning pulse pulse-warning update_event">
+                        <i class="bi bi-pencil"></i>
+                        <span class="pulse-ring"></span>
+                        </button>
+                        <button type="button" data-id="${row.id}" data-name="${row.name}" class="btn btn-icon btn-light-danger pulse pulse-danger delete_event">
+                            <i class="bi bi-trash fs-2"></i>
+                            <span class="pulse-ring"></span>
                         </button>
                     `;
+                    //class="btn btn-icon btn-light pulse pulse-secondary"
                 }
             },
         ]
@@ -86,38 +89,17 @@ var KTDatatablesButtons = function () {
     var handleSearchDatatable = function () {
         $('#filter_client_name').on('keyup', function(event){ // Filter by client name
             var client_name = $(this).val();
-            datatable.search(client_name).draw();
-        });
-    }
-
-    let updateUser = function () {
-        $(document).on('click','.update_user',function(){
-            let id = $(this).data('id');
-            $.ajax({
-                url         : `/users-imaq/${id}/edit`,
-                dataType    : 'json',
-                contentType : false,
-                processData : false,
-                type        : 'GET',
-            }).done(function(response){
-                if(!response.error){
-                    $('#edit_user_modal').empty();
-                    $('#edit_user_modal').append(response.render);
-                    $('#kt_modal_edit_user').modal('show');
-                } else {
-                    // Colocar mensaje en caso de error
-                }
-            });
+            datatable.columns(1).search(client_name).draw();
         });
     }
 
     // Delete
-    let deleteUser = function () {
-        $(document).on('click','.delete_user',function(){
+    let deleteBrand = function () {
+        $(document).on('click','.delete_event',function(){
             let id   = $(this).data('id');
             let name = $(this).data('name');
             Swal.fire({
-                text: `¿Estas seguro de querer eliminar el usuario ${name}?`,
+                text: `¿Estas seguro de querer eliminar el evento ${name}?`,
                 icon: "warning",
                 showCancelButton: true,
                 buttonsStyling: false,
@@ -130,7 +112,7 @@ var KTDatatablesButtons = function () {
             }).then(function (result) {
                 if (result.value) {
                     $.ajax({
-                        url         : '/productos-mapro/delete/'+ id,
+                        url         : '/events-mpd/delete/'+ id,
                         dataType    : 'json',
                         contentType : false,
                         processData : false,
@@ -147,16 +129,37 @@ var KTDatatablesButtons = function () {
         });
     }
 
+    //Update
+    let updateBrand = function () {
+        $(document).on('click','.update_event',function(){
+            let id = $(this).data('id');
+            $.ajax({
+                url         : `/events-mpd/${id}/edit`,
+                dataType    : 'json',
+                contentType : false,
+                processData : false,
+                type        : 'GET',
+            }).done(function(response){
+                if(!response.error){
+                    $('#edit_event_mpd_modal').empty();
+                    $('#edit_event_mpd_modal').append(response.render);
+                    $('#kt_modal_update_event_mpd').modal('show');
+                } else {
+                    // Colocar mensaje en caso de error
+                }
+            });
+        });
+    }
+
     // Public methods
     return {
         init: function () {
             initDatatable();
             handleSearchDatatable();
-            updateUser(); // Update user
-            deleteUser(); // Delete user
+            deleteBrand();
+            updateBrand();
         }
     }
-
 }();
 
 // On document ready

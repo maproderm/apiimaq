@@ -119,11 +119,11 @@ class ProductsController extends Controller
     //     ]);
 
     // }
-    public function getProductsMapro() {
+    public function get() {
         $request = request();
         $inventory   = Inventory::with(['category','division','provider','brand','umedida','typematerial','satkeyunidad', 'levelarea', 'size', 'clasesat']);
         // $inventory   = Inventory::all();
-        return $inventory->where('status', 1)->get();
+        return $inventory->where('status', 1)->where('division_id', 3)->get();
         // return Inventory::get();
     }
     /**

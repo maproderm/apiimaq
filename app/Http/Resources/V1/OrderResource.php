@@ -89,7 +89,7 @@ class OrderResource extends JsonResource
             // 'fullname'          => $this->user->name,
             'fullname'          => ucfirst($this->user->name) . ' ' . ucfirst($this->user->last_name),
             'sale_in'          => $sales_in[$this->sale_in - 0],
-            'my_color'          => $colors[$this->my_color - 0],
+            //'my_color'          => $colors[$this->my_color - 0],
             // 'user_id'           => $this->user_id,
             'num_order'         => $this->num_order,
             'items'             => $this->items,

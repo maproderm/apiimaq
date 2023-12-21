@@ -16,7 +16,6 @@
                             <i class="bi bi-person-plus-fill fs-2x"></i>
                             Nuevo Usuario
                         </button>
-
                 </div>
             </div>
             <div class="card-body">
@@ -48,38 +47,10 @@
                 </table>
                 <!--end::Datatable-->
             </div>
-            {{-- <div class="card-body">
-                <div class="p-5">
-                    <div class="col-md-4 my-2 my-md-0">
-                        <div class="input-icon">
-                            <input type="text" class="form-control" placeholder="Buscar usuario por nombre..." id="kt_dataTable_search" data-kt-docs-table-filter="search" />
-                            <span>
-                                <i class="flaticon2-search-1 text-muted"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <!--begin::Datatable-->
-                <table id="users_datatable" class="table align-middle table-row-dashed fs-6 gy-5">
-                    <thead>
-                    <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                        <th>N°</th>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
-                        <th>Correo</th>
-                        <th>Estatus</th>
-                        <th>Último login</th>
-                        <th class="text-end min-w-100px">Acciones</th>
-                    </tr>
-                    </thead>
-                    <tbody class="text-gray-600 fw-bold">
-                    </tbody>
-                </table>
-                <!--end::Datatable-->
-            </div> --}}
         </div>
     </div>
 </div>
+<div class="" id="edit_user_modal"></div>
 @endsection
 @push('scripts')
     <script type="text/javascript" src="{{  URL::asset ('js/admin/users/users.js?v='.rand())  }}"></script>

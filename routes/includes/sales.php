@@ -3,6 +3,7 @@
 use App\Http\Controllers\Sales\Sale\SaleController;
 use App\Http\Controllers\Sales\Client\ClientController;
 use App\Http\Controllers\Sales\Config\BrandsController;
+use App\Http\Controllers\Sales\Config\EventsController;
 use App\Http\Controllers\Sales\Dealer\DealerController;
 use App\Http\Controllers\Sales\Pedido\PedidoController;
 use App\Http\Controllers\Sales\Config\CategoriesController;
@@ -14,12 +15,11 @@ Route::group(['middleware' => ['role:developer|superadmin|sales']], function () 
     //products
     Route::get('/productos',[ProductController::class,'index'])->middleware(['auth'])->name('productos.mapro.index');
     Route::get('/productos/create',[ProductController::class,'create'])->middleware(['auth'])->name('productos.mapro.create');
-    Route::get('/productos/get-maproderm-all', [ProductController::class, 'getProductsMapro'])->middleware(['auth'])->name('productosmapro.get'); // TO: INVENTARIO VISTA ALMACEN STATUS 1
+    Route::get('/productos/get-maproderm-all', [ProductController::class, 'get'])->middleware(['auth'])->name('productosmapro.get'); // TO: INVENTARIO VISTA ALMACEN STATUS 1
     Route::get('/productos/delete/{id}',[ProductController::class,'destroy'])->middleware(['auth'])->name('products.destroy');
-    Route::get('/productos/editar/{id}', [ProductController::class, 'editProductSale'])->middleware(['auth'])->name('productos.editproduct'); //TO: EDIT A USER
-    Route::post('/storeproduct',[ProductController::class,'store'])->middleware(['auth'])->name('productos.mapro.store');
+    Route::get('/productos/editar/{id}', [ProductController::class, 'edit'])->middleware(['auth'])->name('productos.editproduct'); //TO: EDIT A USER
     Route::get('/productos-eliminados',[ProductController::class,'historial'])->middleware(['auth'])->name('productos.mapro.historial');
-    // Route::get('/product/{id}/edit',[ProductsController::class,'edit'])->middleware(['auth'])->name('products.edit');
+    Route::get('/productos/eliminados-get-all',[ProductController::class,'productsEliminados'])->middleware(['auth'])->name('productos.mapro.eliminados');
     Route::resource('productos', ProductController::class)->middleware(['auth'])->names('productos.mapro')->except(['destroy']);
 
     //Clientes
@@ -58,6 +58,12 @@ Route::group(['middleware' => ['role:developer|superadmin|sales']], function () 
     Route::get('/brands-mpd/{id}/edit',[BrandsController::class,'edit'])->middleware(['auth'])->name('catalogmpd.brands.edit');
     Route::get('/brands-mpd/delete/{id}',[BrandsController::class,'delete'])->middleware(['auth'])->name('catalogmpd.brands.destroy');
     Route::resource('maproderm-marcas', BrandsController::class)->middleware(['auth'])->names('catalogmpd.brands')->except(['destroy']);
+
+    Route::get('/maproderm-eventos',[EventsController::class,'index'])->middleware(['auth'])->name('catalogmpd.events.index');
+    Route::get('/events/get-maproderm-all',[EventsController::class,'get'])->middleware(['auth'])->name('catalogmpd.events.get');
+    Route::get('/events-mpd/{id}/edit',[EventsController::class,'edit'])->middleware(['auth'])->name('catalogmpd.events.edit');
+    Route::get('/events-mpd/delete/{id}',[EventsController::class,'delete'])->middleware(['auth'])->name('catalogmpd.events.destroy');
+    Route::resource('maproderm-eventos', EventsController::class)->middleware(['auth'])->names('catalogmpd.events')->except(['destroy']);
 
     Route::resource('configuracionesmapro', ConfigmaproController::class)->middleware(['auth'])->names('catalogmpd')->except(['destroy']);
 });

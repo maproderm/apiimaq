@@ -41,6 +41,9 @@ class DatabaseSeeder extends Seeder
             SaleDetailSeeder::class,
             FormserviceSeeder::class,
             FormlineSeeder::class,
+            CountrySeeder::class,
+            StateSeeder::class,
+            MunicipalitySeeder::class,
         ]);
     }
 }

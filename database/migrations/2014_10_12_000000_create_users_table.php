@@ -19,8 +19,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('membership')->nullable();
+            $table->string('id_plan')->nullable();
+            $table->string('fecha_vencimiento')->nullable();
             $table->dateTime('last_login')->nullable();
-            $table->unsignedInteger('status')->default(1);
+            $table->unsignedInteger('status')->default(1)->comment('1:Activo 0:Inactivo');
             $table->rememberToken();
             $table->timestamps();
         });

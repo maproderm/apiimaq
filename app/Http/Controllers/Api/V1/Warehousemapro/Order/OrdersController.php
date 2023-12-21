@@ -14,7 +14,12 @@ class OrdersController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+
+    public function index(){
+
+    }
+
+    public function getOrdersPending()
     {
         // return new OrderCollection ( Mpdorder::with(['user']) );
 
@@ -30,9 +35,11 @@ class OrdersController extends Controller
             // $orders     = Mpdorder::wherein('status',[2,3])->orderBy('created_at', 'DESC')->with('user')->get();
             $orders     = Mpdorder::where('status',2)->orderBy('created_at', 'DESC')->with('user')->get();
             $data       = OrderResource::collection( $orders );
+            $count      = $data->count();
             return response()->json([
-                'ok' => true,
-                'orders' => $data
+                'ok'        => true,
+                'count'     => $count,
+                'orders'    => $data
             ]);
 
         } catch (Throwable $th) {

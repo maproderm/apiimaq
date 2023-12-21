@@ -131,7 +131,7 @@ class ProductController extends Controller
     //     ]);
 
     // }
-    public function getProductsMapro() {
+    public function get() {
         // return Inventory::withTrashed()->get();
         // return User::onlyTrashed()->get();
         $request = request();
@@ -163,7 +163,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function editProductSale($id){
+    public function edit($id){
         $error   = false;
         $message = null;
         $render  = null;
@@ -278,6 +278,39 @@ class ProductController extends Controller
      */
     public function productsEliminados()
     {
-        //
+        //Post::withTrashed()->get();
+        //return Inventory::withTrashed()->get();
+        // return Inventory::onlyTrashed()->get();
+
+        // $request = request();
+
+        // $eliminados = Inventory::withTrashed()->get();
+        // $inventory   = Inventory::with(['category','division','provider','brand','umedida','typematerial','satkeyunidad', 'levelarea', 'size', 'clasesat']);
+        // $inventory   = Inventory::with(['category','division','provider','brand','umedida','typematerial','satkeyunidad', 'levelarea', 'size', 'clasesat']);
+        // $inventory   = Inventory::all();
+        // return $inventory
+                // ->wherein('status', [0, 1, 2, 3])
+                // ->where('type_id', 2)
+                // ->where('category_id', 5)
+            //    -> withTrashed()
+                // ->get();
+
+        // console.log($eliminados);
+
+        $eliminados =  Inventory::onlyTrashed()->with(['division', 'category', 'provider','brand','umedida','typematerial','satkeyunidad', 'levelarea', 'size', 'clasesat']);
+
+        return $eliminados
+
+                ->get();
+    }
+
+    public function restore($id)
+    {
+
+        Product::withTrashed()->find($id)->restore();
+
+        return $eliminados
+
+                ->get();
     }
 }
