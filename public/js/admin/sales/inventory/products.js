@@ -118,17 +118,18 @@ var KTDatatablesButtons = function () {
             //         return `<span style="text-transform:uppercase">${row.sku_product_inventory}</span>`;
             //     }
             // },
-            // {
-            //     //CODIGO DE BARRAS
-            //     targets: 7,
-            //     render: function (data, type, row) {
-            //         if (row.barcode_product_inventory == null) {
-            //             return `<span class="badge badge-light-danger">--</span>`;
-            //         } else {
-            //             return `<span style="text-transform:uppercase">${row.barcode_product_inventory}</span>`;
-            //         }
-            //     }
-            // },
+            {
+                //CODIGO DE BARRAS
+                targets: 7,
+                className : 'dt-head-center dt-body-center',
+                render: function (data, type, row) {
+                    if (row.barcode_product_inventory <= 75022) {
+                        return `<span class="badge badge-light-danger">--</span>`;
+                    } else {
+                        return `<span class="badge badge-light-info" style="text-transform:uppercase">${row.barcode_product_inventory}</span>`;
+                    }
+                }
+            },
             // {
             //     //PROVEEDORES
             //     targets: 9,

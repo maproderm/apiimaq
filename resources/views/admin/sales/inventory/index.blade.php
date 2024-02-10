@@ -31,7 +31,7 @@
                             <th>Categoría</th>
                             <th>Ubicación</th>
                             {{-- <th>SKU</th> --}}
-                            {{-- <th>C. barras</th> --}}
+                            <th class="text-center">C. barras</th>
                             {{-- <th class="min-w-200px">Proveedor</th> --}}
                             <th class="min-w-100px">Marca</th>
                             {{-- <th>Tamaño</th> --}}
