@@ -517,6 +517,41 @@
                 @endhasanyrole
                 {{-- TERMINA ALMACEN IMAQ--}}
 
+                {{-- INICIA ACONDICIONADO --}}
+                @hasanyrole('developer|acondicionado|superadmin')
+                <!--begin:Menu item-->
+                <div class="menu-item pt-5">
+                    <!--begin:Menu content-->
+                    <div class="menu-content">
+                        <span class="menu-heading fw-bold text-uppercase fs-7">Acondicionado</span>
+                    </div>
+                    <!--end:Menu content-->
+                </div>
+                <!--end:Menu item-->
+                <!--begin:Menu item-->
+                <div class="menu-item">
+                    <!--begin:Menu link-->
+                    <a class="menu-link {{ setActive('productosacondicionado.index') }}" href="{{ route('productosacondicionado.index') }}">
+                        <span class="menu-icon">
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
+                            {{-- <i class="bi bi-fingerprint fs-3"></i> --}}
+                            {{-- <i class="bi bi-cart-plus-fill fs-3"></i> --}}
+                            <i class="fa-solid fa-store fs-3"></i>
+                            <!--end::Svg Icon-->
+                        </span>
+                        <span class="menu-title">Productos</span>
+                    </a>
+                    <!--end:Menu link-->
+                </div>
+                <!--end:Menu item-->
+                <!--begin:Menu item-->
+
+
+                <!--end:Menu item-->
+
+                @endhasanyrole
+                {{-- TERMINA ACONDICIONADO --}}
+
                 {{-- INICIA LABORATORIO --}}
                 @hasanyrole('developer')
                 <!--begin:Menu item-->

@@ -26,7 +26,7 @@ class CustomerSeeder extends Seeder
         //     'vmp'=>'1730.00'
         // ] );
 
-        DB::table('mpd_client_information')->insert(['user_id'=>9,'address'=>'--','city'=>'--','postal_code'=>'--','phone'=>'9211409174',]);
+        DB::table('mpd_client_information')->insert(['user_id'=>10,'address'=>'--','city'=>'--','postal_code'=>'--','phone'=>'9211409174',]);
 
 
 

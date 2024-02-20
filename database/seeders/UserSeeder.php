@@ -81,6 +81,14 @@ class UserSeeder extends Seeder
         ]);
         $almacenmapro->assignRole('almacenmapro');
 
+        $acondicionadoimaq = User::create([
+            'name'      => 'Acondicionado',
+            'last_name' => 'IMAQ',
+            'email'     => 'acondicionado@industrialmaquiladora.com',
+            'password'  => Hash::make('Acondicionado2025'),
+        ]);
+        $acondicionadoimaq->assignRole('acondicionado');
+
         // $client = User::create([
         //     'name'      => 'Luz',
         //     'last_name' => 'Fuentes',
@@ -96,7 +104,7 @@ class UserSeeder extends Seeder
         //     'password'  => Hash::make('dealer123'),
         // ]);
         // $dealer->assignRole('distribuidor');
-        $client9=User::create(['name'=>'Nancy','last_name'=>'Chablé Garcia','email'=>'n_chable@hotmail.com','password'=>Hash::make('9211409174'),]);$client9->assignRole('customer');
+        $client10=User::create(['name'=>'Nancy','last_name'=>'Chablé Garcia','email'=>'n_chable@hotmail.com','password'=>Hash::make('9211409174'),]);$client10->assignRole('customer');
 
     }
 }
