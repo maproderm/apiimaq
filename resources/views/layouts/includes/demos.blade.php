@@ -86,8 +86,8 @@
                     <a href="https://1.envato.market/EA4JP" class="btn btn-primary fw-bold mb-15 w-100">Buy Now</a>
                     <!--end::Purchase-->
                     <!--begin::Demos-->
-                    <div class="mb-0">
-                        <h3 class="fw-bold text-center mb-6">Metronic Demos</h3>
+                    {{-- <div class="mb-0">
+                        <h3 class="fw-bold text-center mb-6">Metronic Demosx</h3>
                         <!--begin::Row-->
                         <div class="row g-5">
                             <!--begin::Col-->
@@ -428,7 +428,7 @@
                             <!--end::Col-->
                         </div>
                         <!--end::Row-->
-                    </div>
+                    </div> --}}
                     <!--end::Demos-->
                 </div>
                 <!--end::Wrapper-->

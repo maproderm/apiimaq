@@ -44,73 +44,74 @@ var KTDatatablesButtons = function () {
                     return `${row.name_product_inventory}`;
                 }
             },
-            {
-                //CANTIDAD
-                targets   : 2,
-                // className : 'dt-head-center dt-body-center',
-                render    : function (data, type, row) {
-                    if(row.stock_inventory < row.minimum_inventory){
-                        return `<span class="badge badge-danger">${row.stock_inventory}</span>`;
-                    }if (row.stock_inventory == row.minimum_inventory){
-                        return `<span class="badge badge-warning">${row.stock_inventory}</span>`;
-                    } else {
-                        return `<span class="badge badge-success">${row.stock_inventory}</span>`;
-                    }
-                }
-            },
-            {
-                //PRECIO
-                targets: 3,
-                className : 'dt-head-right dt-body-right',
-                render    : function (data, type, row) {
-                    return `$${Number(row.price_product_inventory).toFixed(2)}`;
-                }
-            },
-            {
-                //PROMOCION
-                targets: 3,
-                className : 'dt-head-right dt-body-right',
-                render    : function (data, type, row) {
+            // {
+            //     //CANTIDAD
+            //     targets   : 2,
+            //     // className : 'dt-head-center dt-body-center',
+            //     render    : function (data, type, row) {
+            //         if(row.stock_inventory < row.minimum_inventory){
+            //             return `<span class="badge badge-danger">${row.stock_inventory}</span>`;
+            //         }if (row.stock_inventory == row.minimum_inventory){
+            //             return `<span class="badge badge-warning">${row.stock_inventory}</span>`;
+            //         } else {
+            //             return `<span class="badge badge-success">${row.stock_inventory}</span>`;
+            //         }
+            //     }
+            // },
+            // {
+            //     //PRECIO
+            //     targets: 3,
+            //     className : 'dt-head-right dt-body-right',
+            //     render    : function (data, type, row) {
+            //         return `$${Number(row.price_product_inventory).toFixed(2)}`;
+            //     }
+            // },
+            // {
+            //     //PROMOCION
+            //     targets: 3,
+            //     className : 'dt-head-right dt-body-right',
+            //     render    : function (data, type, row) {
 
-                    if (row.discount_product_inventory == null || row.discount_product_inventory == 0 ) {
-                        return `<span class="badge badge-light-warning">--</span>`;
-                    } else {
-                        let resta = row.price_product_inventory - row.discount_product_inventory;
-                        let division = row.price_product_inventory / resta;
-                        let porcentaje = 100/division;
-                        return `$${Number(row.discount_product_inventory).toFixed(2)}
-                        <span class="badge badge-light-info">-${porcentaje.toFixed(0)}%</span>
-                        `;
-                    }
+            //         if (row.discount_product_inventory == null || row.discount_product_inventory == 0 ) {
+            //             return `<span class="badge badge-light-warning">--</span>`;
+            //         } else {
+            //             let resta = row.price_product_inventory - row.discount_product_inventory;
+            //             let division = row.price_product_inventory / resta;
+            //             let porcentaje = 100/division;
+            //             return `$${Number(row.discount_product_inventory).toFixed(2)}
+            //             <span class="badge badge-light-info">-${porcentaje.toFixed(0)}%</span>
+            //             `;
+            //         }
 
-                }
-            },
-            {
-                //DIVISION
-                targets: 4,
-                className : 'dt-head-center dt-body-center',
-                render: function (data, type, row) {
-                    return `${row.division.abrv}`;
-                }
-            },
+            //     }
+            // },
+            // {
+            //     //DIVISION
+            //     targets: 4,
+            //     className : 'dt-head-center dt-body-center',
+            //     render: function (data, type, row) {
+            //         return `${row.division.abrv}`;
+            //     }
+            // },
             {
                 //CATEGORIA
                 targets: 5,
+                className : 'dt-head-center dt-body-center',
                 render: function (data, type, row) {
                     return `${row.category.name}`;
                 }
             },
-            {
-                //UBICACION
-                targets: 6,
-                render: function (data, type, row) {
-                    if (row.levelarea == null) {
-                        return `<span class="badge badge-light-danger">--</span>`;
-                    } else {
-                        return `${row.levelarea.name}`;
-                    }
-                }
-            },
+            // {
+            //     //UBICACION
+            //     targets: 6,
+            //     render: function (data, type, row) {
+            //         if (row.levelarea == null) {
+            //             return `<span class="badge badge-light-danger">--</span>`;
+            //         } else {
+            //             return `${row.levelarea.name}`;
+            //         }
+            //     }
+            // },
             // {
             //     //SKU
             //     targets: 7,
@@ -141,6 +142,7 @@ var KTDatatablesButtons = function () {
             {
                 //MARCA
                 targets: 7,
+                className : 'dt-head-center dt-body-center',
                 render: function (data, type, row) {
                     return `${row.brand.name}`;
                 }

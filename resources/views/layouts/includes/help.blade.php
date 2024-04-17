@@ -26,16 +26,16 @@
                 <div class="rounded border border-dashed border-gray-300 p-6 p-lg-8 mb-10">
                     <!--begin::Heading-->
                     <h2 class="fw-bold mb-5">Support at
-                    <a href="https://devs.keenthemes.com" class="">devs.keenthemes.com</a></h2>
+                    <a href="javascript:;" class="">devs.keenthemes.com</a></h2>
                     <!--end::Heading-->
                     <!--begin::Description-->
                     <div class="fs-5 fw-semibold mb-5">
                         <span class="text-gray-500">Join our developers community to find answer to your question and help others.</span>
-                        <a class="explore-link d-none" href="https://keenthemes.com/licensing">FAQs</a>
+                        <a class="explore-link d-none" href="javascript:;">FAQs</a>
                     </div>
                     <!--end::Description-->
                     <!--begin::Link-->
-                    <a href="https://devs.keenthemes.com" class="btn btn-lg explore-btn-primary w-100">Get Support</a>
+                    <a href="javascript:;" class="btn btn-lg explore-btn-primary w-100">Get Support</a>
                     <!--end::Link-->
                 </div>
                 <!--end::Support-->
@@ -58,7 +58,7 @@
                         <!--begin::Wrapper-->
                         <div class="d-flex flex-column me-2 me-lg-5">
                             <!--begin::Title-->
-                            <a href="../../demo13/dist/documentation/getting-started.html" class="text-dark text-hover-primary fw-bold fs-6 fs-lg-4 mb-1">Documentation &amp; Videos</a>
+                            <a href="javascript:;" class="text-dark text-hover-primary fw-bold fs-6 fs-lg-4 mb-1">Documentation &amp; Videos</a>
                             <!--end::Title-->
                             <!--begin::Description-->
                             <div class="text-muted fw-semibold fs-7 fs-lg-6">From guides and video tutorials, to live demos and code examples to get started.</div>
@@ -97,7 +97,7 @@
                         <!--begin::Wrapper-->
                         <div class="d-flex flex-column me-2 me-lg-5">
                             <!--begin::Title-->
-                            <a href="../../demo13/dist/documentation/base/utilities.html" class="text-dark text-hover-primary fw-bold fs-6 fs-lg-4 mb-1">Plugins &amp; Components</a>
+                            <a href="javascript:;" class="text-dark text-hover-primary fw-bold fs-6 fs-lg-4 mb-1">Plugins &amp; Components</a>
                             <!--end::Title-->
                             <!--begin::Description-->
                             <div class="text-muted fw-semibold fs-7 fs-lg-6">Check out our 300+ in-house components and customized 3rd-party plugins.</div>
@@ -135,7 +135,7 @@
                         <!--begin::Wrapper-->
                         <div class="d-flex flex-column me-2 me-lg-5">
                             <!--begin::Title-->
-                            <a href="https://preview.keenthemes.com/metronic8/demo13/layout-builder.html" class="text-dark text-hover-primary fw-bold fs-6 fs-lg-4 mb-1">Layout Builder</a>
+                            <a href="javascript:;" class="text-dark text-hover-primary fw-bold fs-6 fs-lg-4 mb-1">Layout Builder</a>
                             <!--end::Title-->
                             <!--begin::Description-->
                             <div class="text-muted fw-semibold fs-7 fs-lg-6">Build your layout, preview it and export the HTML for server side integration.</div>
@@ -174,7 +174,7 @@
                         <!--begin::Wrapper-->
                         <div class="d-flex flex-column me-2 me-lg-5">
                             <!--begin::Title-->
-                            <a href="https://devs.keenthemes.com/metronic" class="text-dark text-hover-primary fw-bold fs-6 fs-lg-4 mb-1">Metronic Downloads</a>
+                            <a href="javascript:;" class="text-dark text-hover-primary fw-bold fs-6 fs-lg-4 mb-1">Metronic Downloads</a>
                             <!--end::Title-->
                             <!--begin::Description-->
                             <div class="text-muted fw-semibold fs-7 fs-lg-6">Download your prefered framework and demo with one click.</div>
@@ -212,7 +212,7 @@
                         <!--begin::Wrapper-->
                         <div class="d-flex flex-column me-2 me-lg-5">
                             <!--begin::Title-->
-                            <a href="../../demo13/dist/documentation/getting-started/changelog.html" class="text-dark text-hover-primary fw-bold fs-6 fs-lg-4 mb-1">What's New</a>
+                            <a href="javascript:;" class="text-dark text-hover-primary fw-bold fs-6 fs-lg-4 mb-1">What's New</a>
                             <!--end::Title-->
                             <!--begin::Description-->
                             <div class="text-muted fw-semibold fs-7 fs-lg-6">Latest features and improvements added with our users feedback in mind.</div>

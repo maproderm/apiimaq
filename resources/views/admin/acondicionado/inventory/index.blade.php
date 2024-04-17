@@ -24,16 +24,16 @@
                             <th>SKU</th>
                             <th>Imagen</th>
                             <th class="min-w-100px">Nombre</th>
-                            <th>Cantidad</th>
-                            <th class="text-center">Precio</th>
-                            <th class="text-center min-w-150px">Promoción</th>
-                            <th class="min-w-100px">División</th>
+                            {{-- <th>Cantidad</th> --}}
+                            {{-- <th class="text-center">Precio</th> --}}
+                            {{-- <th class="text-center min-w-150px">Promoción</th> --}}
+                            {{-- <th class="min-w-100px">División</th> --}}
                             <th>Categoría</th>
-                            <th>Ubicación</th>
+                            {{-- <th>Ubicación</th> --}}
                             {{-- <th>SKU</th> --}}
                             <th class="text-center">C. barras</th>
                             {{-- <th class="min-w-200px">Proveedor</th> --}}
-                            <th class="min-w-100px">Marca</th>
+                            <th class="text-center min-w-100px">Marca</th>
                             {{-- <th>Tamaño</th> --}}
                             {{-- <th>Tipo Material</th> --}}
                             {{-- <th>U. SAT</th> --}}

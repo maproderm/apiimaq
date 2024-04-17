@@ -16,7 +16,7 @@
 <!--end::Main-->
 <!--begin::Engage drawers-->
 <!--begin::Demos drawer-->
-@include('layouts.includes.demos')
+{{-- @include('layouts.includes.demos') --}}
 <!--end::Demos drawer-->
 <!--begin::Help drawer-->
 @include('layouts.includes.help')
