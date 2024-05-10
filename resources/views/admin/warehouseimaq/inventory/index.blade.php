@@ -40,7 +40,7 @@
                         <th>Inv. Mínimo</th>
                         <th>Costo Unit</th>
                         {{-- <th>Venta Sug</th> --}}
-                        <th class="text-center min-w-100px">Acciones</th>
+                        <th class="text-center min-w-150px">Acciones</th>
                     </tr>
                     </thead>
                     <tbody xclass="text-gray-600 fw-bold">

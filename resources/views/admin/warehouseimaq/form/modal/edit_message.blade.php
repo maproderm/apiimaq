@@ -48,6 +48,26 @@
                                 <!--end::Input group-->
                             </div>
                             <!--end::Col-->
+                            <!--begin::Col-->
+                            <div class="col">
+                                <!--begin::Input group-->
+                                <div class="fv-row mb-5">
+                                    <!--begin::Label-->
+                                    <label class="fs-6 fw-bold form-label mt-3">
+                                        <span>Fecha de solicitud</span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    {{-- <input type="date" class="form-control" name="name_product_inventory" value="{{ $data->imaqform->created_at ?? '' }}" required/> --}}
+
+                                    <div type="month" class="text-info fw-small fs-5" value="{{ $data->imaqform->created_at ?? '' }}">{{ $data->imaqform->created_at ?? '' }}
+                                        {{-- <a href="javascript:;" class="fw-bold link-primary" value="{{ $data->imaqform->created_at ?? '' }}"></a> --}}
+                                    </div>
+                                    <!--end::Input-->
+                                </div>
+                                <!--end::Input group-->
+                            </div>
+                            <!--end::Col-->
                         </div>
                         <!--end::Row-->
                         <!--begin::Action buttons-->

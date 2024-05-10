@@ -222,7 +222,7 @@ var KTDatatablesButtons = function () {
                 targets: 9,
                 data: null,
                 orderable: false,
-                className: 'text-end',
+                className: 'text-center',
                 render: function (data, type, row) {
                     return `
                         <button type="button" data-id="${row.id}" class="btn btn-icon btn-light-warning update_product"><i class="bi bi-pencil "></i></button>

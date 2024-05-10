@@ -40,7 +40,7 @@
                             {{-- <th>P. SAT</th> --}}
                             {{-- <th>Inv. Mínimo</th> --}}
                             <th>Status</th>
-                            <th class="text-center min-w-100px">Acciones</th>
+                            <th class="text-center min-w-150px">Acciones</th>
                         </tr>
                     </thead>
                     <tbody xclass="text-gray-600 fw-bold">
