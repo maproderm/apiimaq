@@ -44,3 +44,5 @@ require __DIR__.'/includes/acondicionado.php';
 require __DIR__.'/includes/sales.php';
 
 require __DIR__.'/includes/security.php';
+
+require __DIR__.'/includes/scan.php';

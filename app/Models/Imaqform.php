@@ -22,6 +22,8 @@ class Imaqform extends Model
         'message',
         'quantity',
         'hour',
+        'state_id',
+        'form_city',
         'status'
     ];
 
@@ -31,5 +33,9 @@ class Imaqform extends Model
 
     public function lineformimaq() {
         return $this->belongsTo('App\Models\Imaqformlines', 'line_id', 'id');
+    }
+
+    public function stateformimaq() {
+        return $this->belongsTo('App\Models\State', 'state_id', 'id');
     }
 }

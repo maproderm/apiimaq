@@ -39,6 +39,7 @@ License: For each use you must have a valid license purchased only from above li
 		<link href="{{ asset('metronic/assets/plugins/global/plugins.bundle.css?v='.rand()) }}" rel="stylesheet" type="text/css" />
 		<link href="{{ asset('metronic/assets/css/style.bundle.css?v='.rand()) }}" rel="stylesheet" type="text/css" />
         {{-- <link href="{{ asset('css/styles.css?v='.rand()) }}" rel="stylesheet" type="text/css" /> --}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
 		<!--end::Global Stylesheets Bundle-->
 	</head>
 	<!--end::Head-->

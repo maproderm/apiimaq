@@ -17,8 +17,13 @@ class CreateMunicipalitiesTable extends Migration
             $table->id();
             $table->string('key', 3);
             $table->string('name',50);
-            $table->integer('state_id')->unsigned();
-            $table->foreign('state_id')->references('id')->on('list_states');
+            // $table->integer('state_id')->unsigned();
+
+            // $table->foreign('state_id')->references('id')->on('list_states');
+
+            $table->unsignedBigInteger('state_id')->index();
+            $table->foreign('state_id')->references('id')->on('list_states')->onDelete('cascade');
+
             $table->tinyInteger('active')->default(1);
             $table->softDeletes();
             $table->timestamps();
