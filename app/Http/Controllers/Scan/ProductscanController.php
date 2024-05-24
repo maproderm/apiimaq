@@ -31,7 +31,7 @@ class ProductscanController extends Controller
      public function showScanForm()
      {
         //  return view('scan');
-         return view('admin.scan.index');
+         return view('admin.scan.scan');
      }
 
      public function searchProduct(Request $request)
