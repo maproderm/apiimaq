@@ -103,7 +103,7 @@ class FormimaqController extends Controller
             $error   = false;
             $message = "Ocurrió un error durante el proceso: {$th->getMessage()}";
         }
-
+ 
         return response()->json([
             'error'   => $error,
             'message' => $message,
