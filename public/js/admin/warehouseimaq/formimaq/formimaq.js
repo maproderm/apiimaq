@@ -156,14 +156,24 @@ var KTDatatablesButtons = function () {
                             <i class="bi bi-pencil-square fs-2 "></i>
                         </button>
                         `;
-                    }else {
+                    }if (row.status == 1) {
                         return `
                         <span class="badge badge-success">Atendido</span>
                         <button type="button" data-id="${row.id}" class="btn btn-icon btn-light-success update_status">
                             <i class="bi bi-pencil-square fs-2 "></i>
                         </button>
                         `;
+                    }else {
+                        return `
+                        <span class="badge badge-warning">No respondió</span>
+                        <button type="button" data-id="${row.id}" class="btn btn-icon btn-light-warning update_status">
+                            <i class="bi bi-pencil-square fs-2 "></i>
+                        </button>
+                        `;
                     }
+
+
+
                 }
             },
         ]

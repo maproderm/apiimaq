@@ -33,11 +33,11 @@ return new class extends Migration
             $table->foreign('state_id')->references('id')->on('list_states')->onDelete('cascade');
 
             // $table->foreign('states_id')->references('id')->on('list_states');
-            
+
 
             $table->string('form_city');
 
-            $table->tinyInteger('status')->default(0)->comment('0:Pendiente por atender 1:Atendido');
+            $table->tinyInteger('status')->default(0)->comment('0:Pendiente por atender 1:Atendido 2: No respondio');
             $table->softDeletes();
             $table->timestamps();
         });

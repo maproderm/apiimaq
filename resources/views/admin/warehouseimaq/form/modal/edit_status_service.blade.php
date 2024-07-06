@@ -64,6 +64,7 @@
                                                 <option>Seleciona un Estatus</option>
                                                 <option name="status" value="0">Pendiente</option>
                                                 <option name="status" value="1">Atendido</option>
+                                                <option name="status" value="2">No respondió</option>
                                             </select>
                                         </div>
                                     </div>
