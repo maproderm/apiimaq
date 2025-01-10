@@ -141,6 +141,7 @@ class ProductsaconController extends Controller
                 ->wherein('status', [0, 1, 2, 3])
                 // ->where('type_id', 2)
                 // ->where('category_id', 5)
+                // ->where('barcode_product_inventory', '>' , 75022)
                 ->get();
         // return $inventory->get();
         // return Inventory::get();
