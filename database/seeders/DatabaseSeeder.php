@@ -44,6 +44,7 @@ class DatabaseSeeder extends Seeder
             CountrySeeder::class,
             StateSeeder::class,
             MunicipalitySeeder::class,
+            FormimaqSeeder::class,
         ]);
     }
 }

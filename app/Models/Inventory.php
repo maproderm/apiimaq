@@ -25,6 +25,8 @@ class Inventory extends Model
         'level_area_id',
         'sku_product_inventory',
         'barcode_product_inventory',
+        'key_mercado_libre',
+        'asin_amazon',
         'provider_id',
         'brand_id',
         'unit_of_measurement_id',

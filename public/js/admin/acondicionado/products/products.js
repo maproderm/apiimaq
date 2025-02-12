@@ -39,7 +39,7 @@ var KTDatatablesButtons = function () {
             },
             {
                 //NAME
-                targets   : 1,
+                targets   : 2,
                 render    : function (data, type, row) {
                     return `${row.name_product_inventory}`;
                 }
@@ -93,14 +93,14 @@ var KTDatatablesButtons = function () {
             //         return `${row.division.abrv}`;
             //     }
             // },
-            {
-                //CATEGORIA
-                targets: 5,
-                className : 'dt-head-center dt-body-center',
-                render: function (data, type, row) {
-                    return `${row.category.name}`;
-                }
-            },
+            // {
+            //     //CATEGORIA
+            //     targets: 5,
+            //     className : 'dt-head-center dt-body-center',
+            //     render: function (data, type, row) {
+            //         return `${row.category.name}`;
+            //     }
+            // },
             // {
             //     //UBICACION
             //     targets: 6,
@@ -120,14 +120,40 @@ var KTDatatablesButtons = function () {
             //     }
             // },
             {
-                //CODIGO DE BARRAS
-                targets: 7,
+                //CODIGO DE BARRAS GS1
+                targets: 3,
                 className : 'dt-head-center dt-body-center',
                 render: function (data, type, row) {
                     if (row.barcode_product_inventory <= 75022) {
                         return `<span class="badge badge-light-danger">--</span>`;
                     } else {
                         return `<span class="badge badge-light-info" style="text-transform:uppercase">${row.barcode_product_inventory}</span>`;
+                    }
+                }
+            },
+
+            {
+                //CODIGO DE BARRAS MERCADO LIBRE
+                targets: 4,
+                className : 'dt-head-center dt-body-center',
+                render: function (data, type, row) {
+                    if (row.key_mercado_libre <= 5022) {
+                        return `<span class="badge badge-light-danger">--</span>`;
+                    } else {
+                        return `<span class="badge badge-light-primary" style="text-transform:uppercase">${row.key_mercado_libre}</span>`;
+                    }
+                }
+            },
+
+            {
+                //CODIGO DE BARRAS AMAZON
+                targets: 5,
+                className : 'dt-head-center dt-body-center',
+                render: function (data, type, row) {
+                    if (row.asin_amazon <= 5022) {
+                        return `<span class="badge badge-light-danger">--</span>`;
+                    } else {
+                        return `<span class="badge badge-light-dark" style="text-transform:uppercase">${row.asin_amazon}</span>`;
                     }
                 }
             },
@@ -141,7 +167,7 @@ var KTDatatablesButtons = function () {
             // },
             {
                 //MARCA
-                targets: 7,
+                targets: 6,
                 className : 'dt-head-center dt-body-center',
                 render: function (data, type, row) {
                     return `${row.brand.name}`;
@@ -204,7 +230,7 @@ var KTDatatablesButtons = function () {
             // },
             {
                 //NAME
-                targets   : 8,
+                targets   : 7,
                 render    : function (data, type, row) {
                     if (row.status == 1) {
                         return `<span class="badge badge-light-success">Activo</span>`;
