@@ -58,9 +58,9 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    {{-- <input type="date" class="form-control" name="name_product_inventory" value="{{ $data->imaqform->created_at ?? '' }}" required/> --}}
+                                    {{-- <input type="date" class="form-control" id="created_at" name="created_at" value="{{  old('created_at', $data->imaqform->created_at)  }}" disabled required/> --}}
 
-                                    <div type="month" class="text-info fw-small fs-5" value="{{ $data->imaqform->created_at ?? '' }}">{{ $data->imaqform->created_at ?? '' }}
+                                    <div type="date" class="text-info fw-small fs-5" id="kt_daterangepicker_3" value="{{ $data->imaqform->created_at ?? '' }}">{{ $data->imaqform->created_at ?? '' }}
                                         {{-- <a href="javascript:;" class="fw-bold link-primary" value="{{ $data->imaqform->created_at ?? '' }}"></a> --}}
                                     </div>
                                     <!--end::Input-->
@@ -87,6 +87,18 @@
                                 </div>
                                 <!--end::Input group-->
                             </div>
+                            <!--end::Col-->
+                            <!--begin::Col-->
+                            {{-- <div class="col">
+                                <div class="fv-row mb-5">
+                                    <label class="fs-6 fw-bold form-label mt-3">
+                                        <span>Estado</span>
+                                    </label>
+
+                                    <div type="text" class="text-info fw-small fs-5" value="{{ $data->imaqform->state_id ?? '' }}">{{ $data->imaqform->state_id ?? '' }}
+                                    </div>
+                                </div>
+                            </div> --}}
                             <!--end::Col-->
                         </div>
                         <!--end::Row-->

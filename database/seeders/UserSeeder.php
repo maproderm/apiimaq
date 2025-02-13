@@ -28,8 +28,8 @@ class UserSeeder extends Seeder
         $superadmin = User::create([
             'name'      => 'Industrial',
             'last_name' => 'Maquiladora',
-            'email'     => 'superadmin@mail.com',
-            'password'  => Hash::make('Superadmin2024'),
+            'email'     => 'superadmin@industrialmaquiladora.com',
+            'password'  => Hash::make('Superadmin2025'),
         ]);
         $superadmin->assignRole('superadmin');
 

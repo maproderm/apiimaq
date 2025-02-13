@@ -63,7 +63,18 @@ var KTDatatablesButtons = function () {
             },
             {
                 //NAME
-                targets   : 5,
+                targets   : 6,
+                render    : function (data, type, row) {
+                    if(row.name == null){
+                        return `<span class="badge badge-light-warning">Dato Faltante</span>`;
+                    }else {
+                        return `${row.stateformimaq.name}`;
+                    }
+                }
+            },
+            {
+                //NAME
+                targets   : 7,
                 render    : function (data, type, row) {
                     if(row.name == null){
                         return `<span class="badge badge-light-warning">Dato Faltante</span>`;
@@ -74,7 +85,7 @@ var KTDatatablesButtons = function () {
             },
             {
                 //NAME
-                targets   : 5,
+                targets   : 8,
                 render    : function (data, type, row) {
                     if(row.name == null){
                         return `<span class="badge badge-light-warning">Dato Faltante</span>`;
@@ -85,7 +96,7 @@ var KTDatatablesButtons = function () {
             },
             {
                 //NAME
-                targets   : 5,
+                targets   : 9,
                 className : 'dt-head-center dt-body-center',
                 render    : function (data, type, row) {
                     if(row.name == null){
@@ -97,7 +108,7 @@ var KTDatatablesButtons = function () {
             },
             {
                 //NAME
-                targets   : 5,
+                targets   : 10,
                 className : 'dt-head-center dt-body-center',
                 render    : function (data, type, row) {
                     if(row.hour == 1){
@@ -129,7 +140,7 @@ var KTDatatablesButtons = function () {
             },
             {
                 //NAME
-                targets   : 5,
+                targets   : 11,
                 className : 'dt-head-center dt-body-center',
                 render    : function (data, type, row) {
                     if(row.name == null){
@@ -146,7 +157,7 @@ var KTDatatablesButtons = function () {
             },
             {
                 //LINE_ID
-                targets: 2,
+                targets: 12,
                 className : 'dt-head-center dt-body-center',
                 render: function (data, type, row) {
                     if(row.status == 0){

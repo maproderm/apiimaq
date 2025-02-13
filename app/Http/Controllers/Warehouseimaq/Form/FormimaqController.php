@@ -91,9 +91,11 @@ class FormimaqController extends Controller
         $render  = null;
         try {
             $imaqform = Imaqform::find($id);
+            // $states    = Imaqformlines::all();
             if($imaqform){
                 $data               = (object)[];
                 $data->imaqform     = $imaqform;
+                // $data->states       = $states;
                 $render = view('admin.warehouseimaq.form.modal.edit_message',compact('data'))->render();
             } else {
                 $error   = false;
@@ -103,7 +105,7 @@ class FormimaqController extends Controller
             $error   = false;
             $message = "Ocurrió un error durante el proceso: {$th->getMessage()}";
         }
- 
+
         return response()->json([
             'error'   => $error,
             'message' => $message,
@@ -164,7 +166,7 @@ class FormimaqController extends Controller
         // return Imaqform::get();
 
         $request = request();
-        $inventory   = Imaqform::with(['serviceformimaq','lineformimaq']);
+        $inventory   = Imaqform::with(['serviceformimaq','lineformimaq','stateformimaq']);
         return $inventory->get();
     }
 }

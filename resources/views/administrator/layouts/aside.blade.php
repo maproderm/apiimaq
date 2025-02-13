@@ -199,7 +199,7 @@
                 <!--end:Menu item-->
 
                 {{-- INICIA ALMACEN IMAQ--}}
-                @hasanyrole('developer|superadmin|almacenimaq')
+                @hasanyrole('developer|almacenimaq')
                 <!--begin:Menu item-->
                 <div class="menu-item pt-5">
                     <!--begin:Menu content-->
@@ -1112,7 +1112,7 @@
                 {{-- TERMINA VENTAS --}}
 
                 {{-- INICIA ALMACEN MAPRODERM --}}
-                @hasanyrole('developer|almacenmapro|superadmin')
+                @hasanyrole('developer|almacenmapro')
                 <!--begin:Menu item-->
                 <div class="menu-item pt-5">
                     <!--begin:Menu content-->
@@ -1431,7 +1431,7 @@
                 {{-- TERMINA CLIENTES --}}
 
                 {{-- INICIA MI PROPIA MARCA --}}
-                @hasanyrole('developer')
+                @hasanyrole('developer|superadmin')
                 <!--begin:Menu item-->
                 <div class="menu-item pt-5">
                     <!--begin:Menu content-->

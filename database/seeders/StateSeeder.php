@@ -54,7 +54,7 @@ class StateSeeder extends Seeder
         DB::table('list_states')->insert([
             'id'=> (5),
             'key'=>('05'),
-            'name'=>('Coahuila de Zaragoza'),
+            'name'=>('Coahuila'),
             'abrev'=>('Coah.'),
             'country_id' => (1),
             'active'=> ('1')
@@ -90,7 +90,7 @@ class StateSeeder extends Seeder
         DB::table('list_states')->insert([
             'id'=> (9),
             'key'=>('09'),
-            'name'=>('Distrito Federal'),
+            'name'=>('CDMX'),
             'abrev'=>('DF'),
             'country_id' => (1),
             'active'=> ('1')
@@ -152,7 +152,7 @@ class StateSeeder extends Seeder
         DB::table('list_states')->insert([
             'id'=> (16),
             'key'=>('16'),
-            'name'=>('Michoacán de Ocampo'),
+            'name'=>('Michoacán'),
             'abrev'=>('Mich.'),
             'country_id' => (1),
             'active'=> ('1')
@@ -278,7 +278,7 @@ class StateSeeder extends Seeder
         DB::table('list_states')->insert([
             'id'=> (30),
             'key'=>('30'),
-            'name'=>('Veracruz de Ignacio de la Llave'),
+            'name'=>('Veracruz'),
             'abrev'=>('Ver.'),
             'country_id' => (1),
             'active'=> ('1')

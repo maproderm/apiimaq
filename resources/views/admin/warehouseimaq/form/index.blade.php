@@ -23,7 +23,7 @@
                         <div class="d-flex align-items-center position-relative">
                             {{-- <span class="svg-icon fs-1 position-absolute ms-4">...</span> --}}
                             {{-- <input type="text" data-kt-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search Report" /> --}}
-                            <input type="text" class="form-control" placeholder="Buscar producto" id="filter_client_name"/>
+                            <input type="text" class="form-control" placeholder="Buscar" id="filter_client_name"/>
                             <span>
                                 <i class="flaticon2-search-1 text-muted"></i>
                             </span>
@@ -86,7 +86,7 @@
                     {{-- INICIO ORIGINAL --}}
                 {{-- <table id="kt_datatable_example" class="table align-middle table-striped table-row-bordered gy-3 gs-7 ajax_datatable"> --}}
                     {{-- FIN ORIGINAL --}}
-                <table class="table align-middle border rounded table-row-dashed fs-6 g-5 ajax_datatable" id="kt_datatable_example">
+                <table class="table align-middle border rounded table-row-dashed fs-7 g-3 ajax_datatable" id="kt_datatable_example">
                     <thead>
                     {{-- <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0"> --}}
                     <tr class="text-start text-dark fw-bolder fs-7 text-uppercase gs-0">
@@ -95,6 +95,7 @@
                         <th>Apellido</th>
                         <th>Correo</th>
                         <th class="min-w-100px">Teléfono</th>
+                        <th class="min-w-100px">Estado</th>
                         <th>Servicio</th>
                         <th>Linea de producto</th>
                         <th>Cantidad</th>
