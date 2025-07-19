@@ -66,4 +66,7 @@ Route::group(['middleware' => ['role:developer|superadmin|sales']], function () 
     Route::resource('maproderm-eventos', EventsController::class)->middleware(['auth'])->names('catalogmpd.events')->except(['destroy']);
 
     Route::resource('configuracionesmapro', ConfigmaproController::class)->middleware(['auth'])->names('catalogmpd')->except(['destroy']);
+
+    Route::get('/admin/sales/data', [PedidoController::class, 'data'])->name('pedidos.data');
+
 });

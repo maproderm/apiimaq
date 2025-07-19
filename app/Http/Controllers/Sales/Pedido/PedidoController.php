@@ -5,6 +5,7 @@ use App\Models\Mpdorder;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class PedidoController extends Controller
 {
@@ -15,7 +16,17 @@ class PedidoController extends Controller
      */
     public function index(Mpdorder $order)
     {
+        // $orders = Mpdorder::with(['clientUser', 'clientInformation'])->get();
+        // return datatables()->of($orders)->make(true);
+
         return view('admin.sales.pedidos.index');
+    }
+
+    public function data(Request $request)
+    {
+        $orders = Mpdorder::with(['clientUser', 'clientInformation'])->get();
+
+        return datatables()->of($orders)->make(true);
     }
 
     public function quotation()
@@ -63,7 +74,8 @@ class PedidoController extends Controller
         //         ->get();
 
         $request = request();
-        $orders   = Mpdorder::with(['user']);
+        $orders   = Mpdorder::with(['user', 'clientInformation']);
+        // $orders = Mpdorder::with(['clientUser', 'clientInformation'])->get();
         return $orders->get();
     }
 

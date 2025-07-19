@@ -14,6 +14,8 @@ class SaleController extends Controller
      */
     public function index()
     {
+        $orders = Mpdorder::with(['clientUser', 'clientInformation'])->get();
+        return datatables()->of($orders)->make(true);
         // return view('admin.sales.pedidos.index');
     }
 
