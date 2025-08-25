@@ -16,8 +16,10 @@ class PedidoController extends Controller
      */
     public function index(Mpdorder $order)
     {
-        // $orders = Mpdorder::with(['clientUser', 'clientInformation'])->get();
-        // return datatables()->of($orders)->make(true);
+        //Se muestra la vista de pedidos (Mis pedidos en area de ventas)
+
+        $orders = Mpdorder::with(['clientUser', 'clientInformation'])->get();
+        //return datatables()->of($orders)->make(true);
 
         return view('admin.sales.pedidos.index');
     }

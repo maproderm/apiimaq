@@ -26,7 +26,7 @@ return new class extends Migration
             $table->foreign('level_area_id')->references('id')->on('imaq_levels_area')->onDelete('cascade');
             $table->string('sku_product_inventory')->unique()->nullable();
             $table->string('barcode_product_inventory', 14)->unique()->nullable();
-            $table->string('key_mercado_libre')->unique()->nullable();
+            $table->string('key_mercado_libre')->unique()->nullable()->comment('Código Mercado Libre Full');
             $table->string('asin_amazon')->unique()->nullable();
             $table->unsignedBigInteger('provider_id')->index()->nullable();
             $table->foreign('provider_id')->references('id')->on('users')->onDelete('cascade');

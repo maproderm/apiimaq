@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Sales\Sale;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -14,6 +15,9 @@ class SaleController extends Controller
      */
     public function index()
     {
+
+        //Se muestra la vista para crrear una nueva venta pero no se usa porque solo se usa el create
+
         $orders = Mpdorder::with(['clientUser', 'clientInformation'])->get();
         return datatables()->of($orders)->make(true);
         // return view('admin.sales.pedidos.index');
