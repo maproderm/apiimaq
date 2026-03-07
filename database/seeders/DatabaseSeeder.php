@@ -37,6 +37,7 @@ class DatabaseSeeder extends Seeder
             TypeproductSeeder::class,
             ProductsatSeeder::class,
             ProductsSeeder::class,
+            ProductsImaqSeeder::class,
             SaleSeeder::class,
             SaleDetailSeeder::class,
             FormserviceSeeder::class,
@@ -45,6 +46,7 @@ class DatabaseSeeder extends Seeder
             StateSeeder::class,
             MunicipalitySeeder::class,
             FormimaqSeeder::class,
+
         ]);
     }
 }

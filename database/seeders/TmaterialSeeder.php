@@ -33,5 +33,23 @@ class TmaterialSeeder extends Seeder
         DB::table('imaq_type_of_material')->insert([
             'name'=>'Vidrio'
         ] );
+        DB::table('imaq_type_of_material')->insert([
+            'name'=>'Cartón'
+        ] );
+        DB::table('imaq_type_of_material')->insert([
+            'name'=>'Aluminio'
+        ] );
+        DB::table('imaq_type_of_material')->insert([
+            'name'=>'Hule'
+        ] );
+        DB::table('imaq_type_of_material')->insert([
+            'name'=>'Textil'
+        ] );
+        DB::table('imaq_type_of_material')->insert([
+            'name'=>'Mixto'
+        ] );
+        DB::table('imaq_type_of_material')->insert([
+            'name'=>'Químico'
+        ] );
     }
 }

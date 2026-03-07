@@ -46,3 +46,5 @@ require __DIR__.'/includes/sales.php';
 require __DIR__.'/includes/security.php';
 
 require __DIR__.'/includes/scan.php';
+
+require __DIR__.'/includes/warehouseimaqone.php';

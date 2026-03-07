@@ -30,4 +30,9 @@ class Imaqcategory extends Model
     public function products() {
         return $this->hasMany('App\Models\Inventory', 'category_id', 'id');
     }
+
+    public function productsalmacen()
+    {
+        return $this->hasMany(ImaqProductInventory::class);
+    }
 }

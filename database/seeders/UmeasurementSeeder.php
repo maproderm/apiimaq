@@ -39,5 +39,17 @@ class UmeasurementSeeder extends Seeder
         DB::table('imaq_unit_of_measurement')->insert([
             'name'=>'Bulto'
         ] );
+        DB::table('imaq_unit_of_measurement')->insert([
+            'name'=>'Mililitro'
+        ] );
+        DB::table('imaq_unit_of_measurement')->insert([
+            'name'=>'Gramo'
+        ] );
+        DB::table('imaq_unit_of_measurement')->insert([
+            'name'=>'Rollo'
+        ] );
+        DB::table('imaq_unit_of_measurement')->insert([
+            'name'=>'Kit'
+        ] );
     }
 }

@@ -17,8 +17,8 @@ class DivisionSeeder extends Seeder
     {
         //
         DB::table('imaq_division')->insert([
-            'name'=>'Almacén IMAQ',
-            'abrv'=>'IMAQ'
+            'name'=>'Almacén IMAQ 1',
+            'abrv'=>'IMAQ1'
         ] );
 
         DB::table('imaq_division')->insert([
@@ -29,6 +29,11 @@ class DivisionSeeder extends Seeder
         DB::table('imaq_division')->insert([
             'name'=>'Producto Terminado',
             'abrv'=>'MPD'
+        ] );
+
+        DB::table('imaq_division')->insert([
+            'name'=>'Almacén IMAQ 2',
+            'abrv'=>'IMAQ2'
         ] );
     }
 }

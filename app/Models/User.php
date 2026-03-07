@@ -28,6 +28,7 @@ class User extends Authenticatable
         'last_login',
         'status',
         'id_client',
+        'avatar',
     ];
 
     /**

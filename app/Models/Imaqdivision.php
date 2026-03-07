@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\ImaqProductInventory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Imaqdivision extends Model
 {
@@ -21,4 +22,12 @@ class Imaqdivision extends Model
         'name',
         'abrv',
     ];
+
+    public function products()
+    {
+        return $this->hasMany(
+            ImaqProductInventory::class,
+            'division_id'
+        );
+    }
 }

@@ -66,17 +66,92 @@ class CategorySeeder extends Seeder
             'division_id'=>'3'
         ] );
         DB::table('imaq_categories')->insert([
-            'name'=>'Categoria 1',
+            'name'=>'Envases',
             'status'=>'1',
             'division_id'=>'1'
         ] );
         DB::table('imaq_categories')->insert([
-            'name'=>'Categoria 2',
+            'name'=>'Tapas',
             'status'=>'1',
             'division_id'=>'1'
         ] );
         DB::table('imaq_categories')->insert([
-            'name'=>'Categoria 3',
+            'name'=>'Empaques Primarios',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Empaques Secundarios',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Etiquetas e Impresos',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Insumos de Producción',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Refacciones y Herramientas',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Kits de Envases',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Material de Mantenimiento',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Dosificadores',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Silla de montar',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Disc Top',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Sobretapa',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Atomizador',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Envase lleno sin decorar',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Envase sin llenar MPD',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Wippers',
+            'status'=>'1',
+            'division_id'=>'1'
+        ] );
+        DB::table('imaq_categories')->insert([
+            'name'=>'Envase lleno clientes',
             'status'=>'1',
             'division_id'=>'1'
         ] );
